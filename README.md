@@ -21,6 +21,7 @@
 - `docs/research/00-AI-CONTEXT.md` —— 给外部 AI 的项目背景、资料层级与证据规则说明
 - `docs/research/01-USER-QUESTIONS-AND-CONCERNS.md` —— 发起人原始问题与顾虑清单
 - `docs/research/09-重庆本地通-入境游综合调研报告.md` —— Codex 综合调研主报告（完整基准版）
+- `docs/research/12-外国用户视角与海外同类服务调研-2026-11-02.md` —— 真实客源分层、外国用户视角、英文文案、海外同类服务与 90 天验证补充
 - `docs/research/10-CQLocalPal-ChatGPT独立调研报告-2026-11-02.pdf`（及 `.txt` 提取版）—— ChatGPT 独立调研报告
 - `docs/research/11-Codex-增量证据与阅读说明-2026-11-02.md` —— 直接竞品（Jay Chongqing Tour / Anjia Travel）与政策增量证据
 - `docs/research/审查-商业逻辑.md` & `docs/research/审查-来源与事实.md` —— 商业模式反方压力测试与事实核查记录
