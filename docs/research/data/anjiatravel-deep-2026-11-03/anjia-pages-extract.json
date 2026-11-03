@@ -1,0 +1,165 @@
+[
+ {
+  "file": "about.html",
+  "title": "",
+  "desc": "",
+  "h1": "The licensed cyberpunk Chongqing specialist",
+  "price_tokens": [],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-airport-to-city-transfer.html",
+  "title": "",
+  "desc": "",
+  "h1": "Chongqing Jiangbei Airport to the city centre: metro, taxi, airport bus or a private pickup",
+  "price_tokens": [],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-family-tour.html",
+  "title": "",
+  "desc": "Private Chongqing family tours with flexible pacing, kid-friendly food choices, shorter walks, private vehicle and safe local guide support.",
+  "h1": "Chongqing family tour with private pacing",
+  "price_tokens": [
+   "$380"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-food-tour.html",
+  "title": "",
+  "desc": "Private Chongqing food tour for hotpot, noodles, street snacks, markets and non-spicy options with a local guide who knows where locals eat.",
+  "h1": "Chongqing food tour: hotpot, noodles and local tables",
+  "price_tokens": [
+   "$380"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-luxury-private-tour.html",
+  "title": "",
+  "desc": "Luxury private Chongqing tour with bespoke routing, premium hotels, private guide, vehicle, dining reservations and Wulong or Dazu extensions.",
+  "h1": "Chongqing luxury private tour",
+  "price_tokens": [
+   "$1,280",
+   "$380"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-night-tour.html",
+  "title": "",
+  "desc": "Private Chongqing night tour for Hongya Cave, Jiefangbei, skyline viewpoints, Two Rivers cruise and hotpot with local guide and vehicle.",
+  "h1": "Chongqing night tour: the city after dark",
+  "price_tokens": [
+   "$380"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-photography-tour.html",
+  "title": "",
+  "desc": "A private Chongqing photography tour built around neon, bridges, layered streets, metro viewpoints, food alleys and the best blue-hour timing for the city.",
+  "h1": "Chongqing photography private tour",
+  "price_tokens": [
+   "$380"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-private-driver-english-guide.html",
+  "title": "",
+  "desc": "",
+  "h1": "Private Car, Driver and English-Speaking Guide in Chongqing: 2026 Day Rate, What&#x27;s Included, How to Book",
+  "price_tokens": [
+   "CNY 1,900",
+   "CNY 2,150"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-private-tours.html",
+  "title": "Private Chongqing Tour with English Guide & Car | Anjia",
+  "desc": "Plan a private Chongqing tour with an English-speaking guide and private vehicle. Tailored Chongqing, Wulong and Dazu itineraries from licensed local operator Anjia.",
+  "h1": "Private Chongqing Tour with English-Speaking Guide &amp; Car",
+  "price_tokens": [],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-senior-friendly-tour.html",
+  "title": "",
+  "desc": "Senior-friendly private Chongqing tours with lower walking intensity, private vehicle, elevator-aware routes, gentle pacing and English-speaking guide.",
+  "h1": "Senior-friendly Chongqing tour planning",
+  "price_tokens": [
+   "$380"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "chongqing-tour-pricing.html",
+  "title": "",
+  "desc": "Private Chongqing tours from $380 per person. See our honest starting prices and what shapes your final quote - free written quote, no obligation.",
+  "h1": "How our Chongqing pricing works",
+  "price_tokens": [
+   "$380",
+   "$580",
+   "$680"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "contact.html",
+  "title": "",
+  "desc": "",
+  "h1": "Send the basics. We reply within 2 hours.",
+  "price_tokens": [],
+  "review_mentions": []
+ },
+ {
+  "file": "payment-and-cancellation.html",
+  "title": "",
+  "desc": "",
+  "h1": "A light deposit holds your dates. You settle the balance in person in China.",
+  "price_tokens": [],
+  "review_mentions": []
+ },
+ {
+  "file": "reviews.html",
+  "title": "",
+  "desc": "",
+  "h1": "Real reviews. No fakes, ever.",
+  "price_tokens": [],
+  "review_mentions": []
+ },
+ {
+  "file": "tours.html",
+  "title": "",
+  "desc": "",
+  "h1": "Starting points for your private China",
+  "price_tokens": [
+   "$380",
+   "$580",
+   "$680"
+  ],
+  "review_mentions": []
+ },
+ {
+  "file": "travel-trade.html",
+  "title": "",
+  "desc": "",
+  "h1": "Your licensed Chongqing DMC",
+  "price_tokens": [],
+  "review_mentions": []
+ },
+ {
+  "file": "wulong-karst-private-tour.html",
+  "title": "",
+  "desc": "Private Wulong day trip from Chongqing: 7:00 hotel pickup, Three Natural Bridges and Longshui Gorge, back at Jiefangbei at about 20:00. 2026 price CNY 2,600 per group for 1-4 guests with a 7-seat MPV,",
+  "h1": "Wulong Private Day Trip from Chongqing: Hotel Pickup, Route and 2026 Price",
+  "price_tokens": [
+   "$380",
+   "CNY 2,600"
+  ],
+  "review_mentions": []
+ }
+]
