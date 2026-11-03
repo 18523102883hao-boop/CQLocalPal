@@ -1,0 +1,74 @@
+{
+ "site": "guruwalk",
+ "pages": [
+  {
+   "url": "https://www.guruwalk.com/",
+   "final_url": "https://www.guruwalk.com/",
+   "status": 200,
+   "server_headers": {
+    "server": "cloudflare",
+    "x-powered-by": "Next.js",
+    "cf-ray": "a5490495c80e3d78-LAX",
+    "content-type": "text/html; charset=utf-8"
+   },
+   "tech_detected": [
+    "Next.js",
+    "WordPress",
+    "Cloudflare"
+   ],
+   "title": "GuruWalk | The best free tours and activities around the world",
+   "meta_desc": "Discover and book free tours with local guides and tourist activities in hundreds of destinations. Compare options, read reviews and find plans for your trip on GuruWalk.",
+   "h1": [
+    "The world&#x27;s best free tours are right here:"
+   ],
+   "price_tokens": [
+    "$10",
+    "$13",
+    "$15",
+    "$17",
+    "$18",
+    "$20",
+    "$21",
+    "$22",
+    "$23",
+    "$24",
+    "$25",
+    "$26",
+    "$27",
+    "$32",
+    "$33",
+    "$38",
+    "$42",
+    "$43",
+    "$44",
+    "$45"
+   ],
+   "hreflang_langs": [
+    "de",
+    "en",
+    "es",
+    "fr",
+    "it",
+    "nl",
+    "pl",
+    "pt-BR",
+    "zh-Hans"
+   ],
+   "html_size_kb": 566,
+   "raw_file": "page0.html"
+  },
+  {
+   "url": "https://www.guruwalk.com/s?location=Chongqing",
+   "error": "HTTP Error 404: Not Found",
+   "raw_file": null
+  },
+  {
+   "url": "https://www.guruwalk.com/china",
+   "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1011)>"
+  },
+  {
+   "url": "https://www.guruwalk.com/walks/china",
+   "error": "HTTP Error 404: Not Found"
+  }
+ ]
+}

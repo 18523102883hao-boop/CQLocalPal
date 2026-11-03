@@ -1,0 +1,67 @@
+{
+ "site": "civitatis",
+ "pages": [
+  {
+   "url": "https://www.civitatis.com/en/",
+   "final_url": "https://www.civitatis.com/en/",
+   "status": 200,
+   "server_headers": {
+    "server": "",
+    "x-powered-by": "",
+    "cf-ray": "",
+    "content-type": "text/html;charset=UTF-8"
+   },
+   "tech_detected": [],
+   "title": "Civitatis – Guided Tours & Experiences around the World",
+   "meta_desc": "Unforgettable experiences, stress-free travel! Book tours, tickets, transfers & more with Civitatis—always at the best price.",
+   "h1": [
+    "Guided tours, tickets &amp; experiences around the world"
+   ],
+   "price_tokens": [],
+   "hreflang_langs": [
+    "en",
+    "es",
+    "es-AR",
+    "es-MX",
+    "fr",
+    "it",
+    "pt",
+    "pt-BR"
+   ],
+   "html_size_kb": 217,
+   "raw_file": "page0.html"
+  },
+  {
+   "url": "https://www.civitatis.com/en/chongqing/",
+   "final_url": "https://www.civitatis.com/en/chongqing/",
+   "status": 200,
+   "server_headers": {
+    "server": "",
+    "x-powered-by": "",
+    "cf-ray": "",
+    "content-type": "text/html;charset=UTF-8"
+   },
+   "tech_detected": [
+    "PHP"
+   ],
+   "title": "Top Tours and Activities in Chongqing | Book Online - Civitatis",
+   "meta_desc": "Discover must-see sights and unique experiences in Chongqing. Reserve city tours, river cruises and unforgettable adventures with simple online booking.",
+   "h1": [
+    "Chongqing"
+   ],
+   "price_tokens": [],
+   "hreflang_langs": [
+    "en",
+    "es",
+    "es-AR",
+    "es-MX",
+    "fr",
+    "it",
+    "pt",
+    "pt-BR"
+   ],
+   "html_size_kb": 283,
+   "raw_file": "page1.html"
+  }
+ ]
+}

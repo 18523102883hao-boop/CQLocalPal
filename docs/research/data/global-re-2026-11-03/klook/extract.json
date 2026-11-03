@@ -1,0 +1,15 @@
+{
+ "site": "klook",
+ "pages": [
+  {
+   "url": "https://www.klook.com/en-US/",
+   "error": "HTTP Error 403: Forbidden",
+   "raw_file": null
+  },
+  {
+   "url": "https://www.klook.com/en-US/search/?query=chongqing",
+   "error": "HTTP Error 403: Forbidden",
+   "raw_file": null
+  }
+ ]
+}

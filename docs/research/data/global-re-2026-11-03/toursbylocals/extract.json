@@ -1,0 +1,93 @@
+{
+ "site": "toursbylocals",
+ "pages": [
+  {
+   "url": "https://www.toursbylocals.com/",
+   "final_url": "https://www.toursbylocals.com/",
+   "status": 200,
+   "server_headers": {
+    "server": "cloudflare",
+    "x-powered-by": "Next.js",
+    "cf-ray": "a5490495d959862c-LAX",
+    "content-type": "text/html; charset=utf-8"
+   },
+   "tech_detected": [
+    "Next.js"
+   ],
+   "title": "Book Authentic Private Tours with Local Tour Guides | Guided Tours by ToursByLocals",
+   "meta_desc": "Our expert local tour guides offer private guided tours that unveil hidden gems and things to do designed to create lasting memories. Explore the world like a local with ToursByLocals.",
+   "h1": [
+    "Take a friendlier route",
+    "Explore private tours, tailored to you"
+   ],
+   "price_tokens": [
+    "$1,320",
+    "$12",
+    "$15",
+    "$16",
+    "$17",
+    "$18",
+    "$19",
+    "$20",
+    "$21",
+    "$22",
+    "$23",
+    "$24",
+    "$25",
+    "$26",
+    "$27",
+    "$28",
+    "$29",
+    "$30",
+    "$31",
+    "$32"
+   ],
+   "hreflang_langs": [],
+   "html_size_kb": 878,
+   "raw_file": "page0.html"
+  },
+  {
+   "url": "https://www.toursbylocals.com/china",
+   "error": "HTTP Error 404: Not Found",
+   "raw_file": null
+  },
+  {
+   "url": "https://www.toursbylocals.com/tours/china",
+   "final_url": "https://www.toursbylocals.com/tours/china",
+   "status": 200,
+   "tech_detected": [
+    "Next.js"
+   ],
+   "title": "Best Private China Tours by Trusted Guides in 2026 | Fully Customizable | ToursByLocals",
+   "meta_desc": "Find customizable private tours in China led by expert local guides. Avoid the crowds & book 5-star rated experiences with flexible cancellation.",
+   "h1": [
+    "China private tours"
+   ],
+   "price_tokens": [
+    "$1,076",
+    "$1,216",
+    "$1,441",
+    "$1,540",
+    "$10",
+    "$116",
+    "$13",
+    "$14",
+    "$141",
+    "$15",
+    "$16",
+    "$17",
+    "$175",
+    "$18",
+    "$182",
+    "$19",
+    "$198",
+    "$20",
+    "$201",
+    "$208"
+   ],
+   "hreflang_langs": [],
+   "html_size_kb": 878,
+   "raw_file": "page_fix0.html.gz"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "site": "kkday",
+ "pages": [
+  {
+   "url": "https://www.kkday.com/en-us",
+   "error": "HTTP Error 403: Forbidden",
+   "raw_file": null
+  },
+  {
+   "url": "https://www.kkday.com/en-us/search?query=chongqing",
+   "error": "HTTP Error 403: Forbidden",
+   "raw_file": null
+  }
+ ]
+}

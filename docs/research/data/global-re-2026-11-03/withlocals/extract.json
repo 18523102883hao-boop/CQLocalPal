@@ -1,0 +1,79 @@
+{
+ "site": "withlocals",
+ "pages": [
+  {
+   "url": "https://www.withlocals.com/",
+   "final_url": "https://www.withlocals.com/",
+   "status": 200,
+   "server_headers": {
+    "server": "cloudflare",
+    "x-powered-by": "Next.js",
+    "cf-ray": "a54903b3fc61c47e-LAX",
+    "content-type": "text/html; charset=utf-8"
+   },
+   "tech_detected": [
+    "Next.js",
+    "Cloudflare"
+   ],
+   "title": "Enjoy a city like a local - unique things to do, private tours & home dinners - Withlocals",
+   "meta_desc": "Connecting travelers with locals through Food & Experiences. Over 2500 unique experiences with verified locals in more than 250 destinations.",
+   "h1": [
+    "Enchanting experiences,with incredible locals"
+   ],
+   "price_tokens": [
+    "$10",
+    "$11",
+    "$14",
+    "$17",
+    "$18",
+    "$19",
+    "$20",
+    "$21",
+    "$22",
+    "$23",
+    "$24",
+    "$25",
+    "$26",
+    "$28",
+    "$29",
+    "$30",
+    "$31",
+    "$32",
+    "$33",
+    "$34"
+   ],
+   "hreflang_langs": [
+    "de",
+    "en",
+    "es",
+    "fr",
+    "it",
+    "nl",
+    "tr"
+   ],
+   "html_size_kb": 539,
+   "raw_file": "page0.html"
+  },
+  {
+   "url": "https://www.withlocals.com/china",
+   "final_url": "https://www.withlocals.com/china",
+   "status": 200,
+   "server_headers": {
+    "server": "cloudflare",
+    "x-powered-by": "",
+    "cf-ray": "a54903be6d3751ae-LAX",
+    "content-type": "text/html"
+   },
+   "tech_detected": [
+    "Cloudflare"
+   ],
+   "title": "Withlocals",
+   "meta_desc": "",
+   "h1": [],
+   "price_tokens": [],
+   "hreflang_langs": [],
+   "html_size_kb": 22,
+   "raw_file": "page1.html"
+  }
+ ]
+}

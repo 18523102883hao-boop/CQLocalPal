@@ -1,0 +1,106 @@
+{
+ "site": "240hoursinchina",
+ "pages": [
+  {
+   "url": "https://www.240hoursinchina.com/",
+   "final_url": "https://www.240hoursinchina.com/",
+   "status": 200,
+   "server_headers": {
+    "server": "Vercel",
+    "x-powered-by": "",
+    "cf-ray": "",
+    "content-type": "text/html; charset=utf-8"
+   },
+   "tech_detected": [
+    "Next.js"
+   ],
+   "title": "Private China Tours & Local Travel Guides | 240 China Travel Guide",
+   "meta_desc": "All tours are private group. Experience travel like a local, enjoying authentic moments but without concerns or hassle.",
+   "h1": [
+    "Private tours designed by people who live here"
+   ],
+   "price_tokens": [
+    "$10",
+    "$14",
+    "$25",
+    "$26",
+    "$27",
+    "$28",
+    "$29",
+    "¥1300",
+    "¥30",
+    "¥45",
+    "¥70"
+   ],
+   "hreflang_langs": [
+    "en-us",
+    "es",
+    "fr",
+    "id",
+    "it",
+    "ja",
+    "ko",
+    "pt",
+    "ru",
+    "th",
+    "vi",
+    "zh-cn"
+   ],
+   "html_size_kb": 878,
+   "raw_file": "page0.html"
+  },
+  {
+   "url": "https://www.240hoursinchina.com/chongqing",
+   "final_url": "https://www.240hoursinchina.com/en-us/chongqing/tour",
+   "status": 200,
+   "server_headers": {
+    "server": "Vercel",
+    "x-powered-by": "",
+    "cf-ray": "",
+    "content-type": "text/html; charset=utf-8"
+   },
+   "tech_detected": [
+    "Next.js"
+   ],
+   "title": "14 Chongqing Tours & Private Local Guides - 240 China Travel Guide",
+   "meta_desc": "Compare 14 private Chongqing tours led by local guides, rated 5.0/5 by 562 travelers. Prices from CNY 225 per person. Most reviewed: Chongqing Walking Tour -...",
+   "h1": [
+    "Chongqing Tours &amp; Private Local Guides"
+   ],
+   "price_tokens": [
+    "$11",
+    "$15",
+    "$19",
+    "$30",
+    "$34",
+    "$36",
+    "$37",
+    "$38",
+    "$39",
+    "$40",
+    "$41",
+    "$42",
+    "$43",
+    "$44",
+    "$45",
+    "$46",
+    "$47",
+    "$48",
+    "$49",
+    "¥200"
+   ],
+   "hreflang_langs": [
+    "en-us",
+    "es",
+    "fr",
+    "it",
+    "ja",
+    "ko",
+    "ru",
+    "zh-cn"
+   ],
+   "html_size_kb": 565,
+   "raw_file": "page1.html"
+  }
+ ]
+}

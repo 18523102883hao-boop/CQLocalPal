@@ -1,0 +1,71 @@
+{
+ "site": "contexttravel",
+ "pages": [
+  {
+   "url": "https://www.contexttravel.com/",
+   "final_url": "https://www.contexttravel.com/",
+   "status": 200,
+   "server_headers": {
+    "server": "",
+    "x-powered-by": "",
+    "cf-ray": "",
+    "content-type": "text/html; charset=utf-8"
+   },
+   "tech_detected": [
+    "Ruby on Rails"
+   ],
+   "title": "Context Travel | Expert-Led Tours in Cultural Capitals",
+   "meta_desc": "",
+   "h1": [
+    "Tours led by experts."
+   ],
+   "price_tokens": [
+    "US$1,000",
+    "US$1,067",
+    "US$1,068",
+    "US$1,091",
+    "US$1,107",
+    "US$1,110",
+    "US$1,241",
+    "US$1,261",
+    "US$1,280",
+    "US$1,304",
+    "US$1,470",
+    "US$1,535",
+    "US$1,594",
+    "US$1,619",
+    "US$1,766",
+    "US$1,819",
+    "US$1,897",
+    "US$10",
+    "US$100",
+    "US$11,128"
+   ],
+   "hreflang_langs": [],
+   "html_size_kb": 878,
+   "raw_file": "page0.html"
+  },
+  {
+   "url": "https://www.contexttravel.com/cities/china",
+   "error": "HTTP Error 404: Not Found",
+   "raw_file": null
+  },
+  {
+   "url": "https://www.contexttravel.com/cities/shanghai",
+   "final_url": "https://www.contexttravel.com/cities/shanghai",
+   "status": 200,
+   "tech_detected": [],
+   "title": "Shanghai Private Tours",
+   "meta_desc": "",
+   "h1": [
+    "Shanghai tours"
+   ],
+   "price_tokens": [
+    "$50"
+   ],
+   "hreflang_langs": [],
+   "html_size_kb": 166,
+   "raw_file": "page_fix0.html.gz"
+  }
+ ]
+}

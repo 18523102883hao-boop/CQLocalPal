@@ -1,0 +1,84 @@
+{
+ "site": "lostplate",
+ "pages": [
+  {
+   "url": "https://lostplate.com/",
+   "final_url": "https://lostplate.com/",
+   "status": 200,
+   "server_headers": {
+    "server": "cloudflare",
+    "x-powered-by": "WP Engine",
+    "cf-ray": "a54903b3ce539d5a-LAX",
+    "content-type": "text/html; charset=UTF-8"
+   },
+   "tech_detected": [
+    "WordPress",
+    "jQuery",
+    "PHP",
+    "generator:WP Rocket 3.23.3.3"
+   ],
+   "title": "Lost Plate Food Tours | China, Cambodia, & Portland, OR",
+   "meta_desc": "Lost Plate Food Tours helps you eat like the locals eat in China, Cambodia, & Portland. Get off the beaten path with a small group food tour from Lost Plate.",
+   "h1": [
+    "Small-Group Food Tours in China, Southeast Asia &amp; Portland."
+   ],
+   "price_tokens": [
+    "$1000",
+    "$109",
+    "$1235",
+    "$139",
+    "$1400",
+    "$145",
+    "$1450",
+    "$1500",
+    "$209",
+    "$305",
+    "$3200",
+    "$39",
+    "$45",
+    "$55",
+    "$560",
+    "$59",
+    "$620",
+    "$65",
+    "$69",
+    "$75"
+   ],
+   "hreflang_langs": [],
+   "html_size_kb": 878,
+   "raw_file": "page0.html"
+  },
+  {
+   "url": "https://lostplate.com/chongqing/",
+   "final_url": "https://lostplate.com/chongqing-evening-food-tour/",
+   "status": 200,
+   "server_headers": {
+    "server": "cloudflare",
+    "x-powered-by": "WP Engine",
+    "cf-ray": "a54903c5eeddc0be-LAX",
+    "content-type": "text/html; charset=UTF-8"
+   },
+   "tech_detected": [
+    "WordPress",
+    "Vue",
+    "jQuery",
+    "PHP",
+    "generator:WP Rocket 3.23.3.3"
+   ],
+   "title": "Chongqing Evening Food Tour | Local Food, Hot Pot & City Views",
+   "meta_desc": "Explore Chongqing after dark on an evening food tour with authentic hot pot, hidden neighborhood restaurants, breathtaking city views, and local stories. All food & drinks included!",
+   "h1": [
+    "Chongqing Evening Food Tour"
+   ],
+   "price_tokens": [
+    "$209",
+    "$59",
+    "$69",
+    "$75"
+   ],
+   "hreflang_langs": [],
+   "html_size_kb": 878,
+   "raw_file": "page1.html"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+ "site": "viator",
+ "pages": [
+  {
+   "url": "https://www.viator.com/",
+   "error": "HTTP Error 403: Forbidden",
+   "raw_file": null
+  },
+  {
+   "url": "https://www.viator.com/searchResults/all?text=Chongqing&page=1",
+   "error": "HTTP Error 403: Forbidden",
+   "raw_file": null
+  }
+ ]
+}

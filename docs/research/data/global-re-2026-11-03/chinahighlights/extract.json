@@ -1,0 +1,54 @@
+{
+ "site": "chinahighlights",
+ "pages": [
+  {
+   "url": "https://www.chinahighlights.com/",
+   "final_url": "https://www.chinahighlights.com/",
+   "status": 200,
+   "server_headers": {
+    "server": "openresty",
+    "x-powered-by": "",
+    "cf-ray": "",
+    "content-type": "text/html"
+   },
+   "tech_detected": [
+    "Bootstrap"
+   ],
+   "title": "China Highlights: Customized Private China Tours",
+   "meta_desc": "Discover China with the award-winning and best-rated tour company for personalized travel in China.",
+   "h1": [
+    "China Highlights: Customized Private China Tours"
+   ],
+   "price_tokens": [],
+   "hreflang_langs": [],
+   "html_size_kb": 193,
+   "raw_file": "page0.html"
+  },
+  {
+   "url": "https://www.chinahighlights.com/chongqing/",
+   "final_url": "https://www.chinahighlights.com/chongqing/",
+   "status": 200,
+   "server_headers": {
+    "server": "openresty",
+    "x-powered-by": "",
+    "cf-ray": "",
+    "content-type": "text/html"
+   },
+   "tech_detected": [
+    "Bootstrap"
+   ],
+   "title": "Plan Your First Trip to Chongqing: A Complete Guide (2026)",
+   "meta_desc": "I'll share my Chongqing experience with some practical tips and personal discoveries to help you plan your first trip to Chongqing.",
+   "h1": [
+    "Plan Your First Trip to Chongqing: A Complete Guide (2026)"
+   ],
+   "price_tokens": [
+    "¥30",
+    "¥50"
+   ],
+   "hreflang_langs": [],
+   "html_size_kb": 196,
+   "raw_file": "page1.html"
+  }
+ ]
+}
