@@ -1,0 +1,57 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ProductCard from '../../../components/ProductCard.astro';
+import TrustBar from '../../../components/TrustBar.astro';
+import CTASection from '../../../components/CTASection.astro';
+import products from '../../../data/products.json';
+
+const t = Object.values(products).filter((p) => ['first-night-chongqing', 'concierge', 'private', 'first-night-family'].includes(p.slug));
+const addon = products['non-spicy-food-tour'];
+---
+<Base title="Tours & Services in Chongqing | CQLocalPal" description="Small-group first nights, a ¥199 remote local concierge, private days with your own guide and driver, family-paced arrivals and a non-spicy food walk. Fixed prices, no shopping stops, verified reviews.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">Tours &amp; services</p>
+      <h1>Chongqing, with someone local.</h1>
+      <p style="font-size:1.2rem;max-width:46ch;">Five services, one promise: a real local by your side, fixed prices in writing, no shopping stops, and your money back if the first 30 minutes prove us wrong.</p>
+    </div>
+  </section>
+
+  <section class="white" style="padding-top:1rem;">
+    <div class="container"><TrustBar /></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid">
+        {t.map((p) => (
+          <ProductCard
+            href={p.slug === 'first-night-chongqing' ? `/en/tours/${p.slug}/` : `/en/tours/${p.slug}/`}
+            name={p.name}
+            priceCny={p.priceCny}
+            unit={p.priceUnit}
+            meta={`${p.duration} · ${p.partySize}`}
+            pitch={p.shortPitch}
+            hero={p.slug === 'first-night-chongqing'}
+          />
+        ))}
+        <ProductCard href={`/en/add-ons/${addon.slug}/`} name={addon.name} priceCny={addon.priceCny} unit={addon.priceUnit} meta={`${addon.duration} · ${addon.partySize}`} pitch={addon.shortPitch} />
+      </div>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <p class="eyebrow">How booking works</p>
+      <h2>Three steps. No payment maze.</h2>
+      <div class="steps">
+        <div class="step"><h3>Pick &amp; reserve</h3><p>Choose a service and send your dates — the booking form or WhatsApp, your call. ¥100 deposit per order holds the date.</p></div>
+        <div class="step"><h3>We confirm in writing</h3><p>Host name, meeting point, price, refund terms — all confirmed on WhatsApp before you pay anything.</p></div>
+        <div class="step"><h3>Pay the balance in China</h3><p>After the service: Alipay, WeChat Pay or cash. Online card payment is coming once our payment approval lands.</p></div>
+      </div>
+      <p class="muted small" style="margin-top:1.5rem;">Every order is covered by the 30-minute guarantee and the no-shopping promise. <a href="/en/legal/refunds/">Refund policy →</a> · <a href="/en/legal/no-shopping/">No-shopping promise →</a></p>
+    </div>
+  </section>
+
+  <CTASection heading="Not sure which fits? Tell us your dates and we'll suggest." />
+</Base>

@@ -1,0 +1,93 @@
+---
+import Base from '../../layouts/Base.astro';
+import TrustBar from '../../components/TrustBar.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import CTASection from '../../components/CTASection.astro';
+import { site } from '../../config';
+import products from '../../data/products.json';
+
+const firstNight = products['first-night'];
+const concierge = products['concierge'];
+const priv = products['private'];
+const family = products['first-night-family'];
+const nonSpicy = products['non-spicy-food-tour'];
+---
+<Base title="CQLocalPal — Your first night in Chongqing, sorted" description="Land in Chongqing with a local by your side: airport pickup help, SIM and payment setup, hotpot ordering and the night views — one fixed price, no shopping stops, full refund if you're not happy in the first 30 minutes.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">Chongqing, with someone local</p>
+      <h1>Land in Chongqing.<br /><em>Feel looked after.</em></h1>
+      <p style="font-size:1.25rem;max-width:34ch;">Your first night in the mountain city, sorted: a real local meets you, gets you connected, checked in, and fed. <strong>¥399/person</strong>, small group, everything explained in English.</p>
+      <p>
+        <a class="btn btn-primary" href="/en/booking/">Reserve with a ¥100 deposit</a>
+        &nbsp;
+        <a class="btn btn-secondary" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal! I have a question about my first night in Chongqing.')}`} rel="noopener">Chat on WhatsApp</a>
+      </p>
+      <p class="muted small">Concierge remote support from ¥199 · Private days from ¥1,600</p>
+    </div>
+  </section>
+
+  <section class="white" style="padding-top:1rem;">
+    <div class="container">
+      <TrustBar />
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Meet your host</p>
+      <h2>A named person, not a call centre.</h2>
+      <p>You'll know who is meeting you before you pay — a real local with a real name, who answers their own WhatsApp. <a href="/en/hosts/">Meet the team →</a></p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <div class="grid">
+        <ProductCard hero href={`/en/tours/${firstNight.slug}/`} name={firstNight.name} priceCny={firstNight.priceCny} unit={firstNight.priceUnit} meta={`${firstNight.duration} · ${firstNight.partySize} · Airport pickup included`} pitch={firstNight.shortPitch} />
+        <ProductCard href={`/en/tours/${concierge.slug}/`} name={concierge.name} priceCny={concierge.priceCny} unit={concierge.priceUnit} meta={`${concierge.duration} · Remote`} pitch={concierge.shortPitch} />
+        <ProductCard href={`/en/tours/${priv.slug}/`} name={priv.name} priceCny={priv.priceCny} unit={priv.priceUnit} meta={`${priv.duration} · Guide + driver`} pitch={priv.shortPitch} />
+        <ProductCard href={`/en/tours/${family.slug}/`} name={family.name} priceCny={family.priceCny} unit={family.priceUnit} meta="Family pace · Kids 6+" pitch={family.shortPitch} />
+        <ProductCard href={`/en/add-ons/${nonSpicy.slug}/`} name={nonSpicy.name} priceCny={nonSpicy.priceCny} unit={nonSpicy.priceUnit} meta="2 hours · 4 tastings included" pitch={nonSpicy.shortPitch} />
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">How the first night works</p>
+      <h2>Your first evening, step by step.</h2>
+      <div class="steps">
+        <div class="step"><h3>We meet you</h3><p>At the airport arrival hall, name sign, before you worry about anything. Flight delayed? We track it.</p></div>
+        <div class="step"><h3>You get connected</h3><p>SIM or eSIM sorted, ride-hailing and payment apps set up with you, step by step.</p></div>
+        <div class="step"><h3>Check-in, translated</h3><p>We go with you to the hotel, handle the registration desk, confirm the details in English.</p></div>
+        <div class="step"><h3>Your first hotpot</h3><p>A locals' restaurant, not a tourist trap. We order for the table and adjust the spice to you.</p></div>
+      </div>
+      <p class="muted small" style="margin-top:1.5rem;">Meals, SIM top-ups and tickets are paid by you directly — we never take commissions on what you buy.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <p class="eyebrow">Verified reviews</p>
+      <h2>We're welcoming our first guests.</h2>
+      <p>{`We're welcoming our first guests. Verified reviews will appear here after completed trips — every rating, kept forever, good or bad.`}</p>
+      <p><a href="/en/reviews/">How verification works →</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Planning yourself instead?</p>
+      <h2>Free guides, written by locals.</h2>
+      <div class="grid">
+        <div class="card"><h3><a href="/en/guide/first-night-in-chongqing/">Your First Night in Chongqing: An Arrival Checklist</a></h3><p>The exact steps from plane to pillow, with the mistakes foreigners make most.</p></div>
+        <div class="card"><h3><a href="/en/guide/payments-and-money/">Paying in Chongqing as a Visitor</a></h3><p>What actually works in 2026: cards, apps, and cash — in that order of hassle.</p></div>
+        <div class="card"><h3><a href="/en/guide/sim-card-and-internet/">Getting Connected After You Land</a></h3><p>eSIM vs airport SIM vs roaming, and which apps you'll want before you leave the terminal.</p></div>
+      </div>
+      <p style="margin-top:1.5rem;"><a class="btn btn-secondary" href="/en/guide/">All guides →</a></p>
+    </div>
+  </section>
+
+  <CTASection heading="Arriving soon? Let's make it easy." />
+</Base>

@@ -1,0 +1,86 @@
+---
+import Base from '../../../layouts/Base.astro';
+import TrustBar from '../../../components/TrustBar.astro';
+import Price from '../../../components/Price.astro';
+import CTASection from '../../../components/CTASection.astro';
+import { site } from '../../../config';
+
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal! I want a Private Day with a local guide (¥1,600/group). My date is around: ')}`;
+---
+<Base title="Private Day with a Local Guide — ¥1,600/group | CQLocalPal" description="Your own English-speaking guide and private car for 8 hours, at your pace: Liziba, Eling Park, Ciqikou, hotpot lunch, Hongya Cave lights. Fixed ¥1,600 per group up to 4, no shopping stops.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">Private · 8 hours · 1–4 guests · Guide + driver</p>
+      <h1>Private Day with a Local Guide</h1>
+      <p style="font-size:1.2rem;max-width:46ch;">One full day, your own pace: a local who explains the city and a private car that goes where you point. No herds, no flag-following, no shopping detours.</p>
+      <p><Price cny={1600} unit="per group · up to 4 · 8 hours" id="price" /></p>
+      <p>
+        <a class="btn btn-primary" href="/en/booking/?product=private">Reserve with a ¥100 deposit</a>
+        &nbsp;
+        <a class="btn btn-secondary" href={wa} rel="noopener">Ask about your date</a>
+      </p>
+      <p class="muted small">Groups of 5+ or multi-day requests: we send a written quote first — always before any payment.</p>
+    </div>
+  </section>
+
+  <section class="white" style="padding-top:1rem;">
+    <div class="container"><TrustBar /></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">A standard day</p>
+      <h2>How a typical private day runs.</h2>
+      <div class="steps">
+        <div class="step"><h3>09:00 · Hotel pickup</h3><p>Your guide and driver meet you in the lobby. Today bends to your pace, not a bus schedule.</p></div>
+        <div class="step"><h3>Liziba &amp; the mountain city</h3><p>Watch the monorail pass through a residential building, then Eling Park for the classic skyline view.</p></div>
+        <div class="step"><h3>Old town or temple</h3><p>Ciqikou's lanes and tea houses, or the quiet Luohan Temple in the middle of the skyscrapers — you choose on the day.</p></div>
+        <div class="step"><h3>Lunch like a local</h3><p>We book a proper local place and order with you. (Meals are paid by you directly — never with commission markup.)</p></div>
+        <div class="step"><h3>Afternoon your way</h3><p>Yangtze River Cableway if it's running, the Art Museum, a neighbourhood market, or just more food. We advise, you decide.</p></div>
+        <div class="step"><h3>17:00 · Drop-off</h3><p>Back at your hotel — or at Hongya Cave just as the lights come on, with instructions to get home.</p></div>
+      </div>
+      <p class="muted small" style="margin-top:1.5rem;">The itinerary is a starting point. Prefer a late start, a hiking morning, or a kid-focused day? Tell us — the day is yours.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul>
+            <li>English-speaking local guide for 8 hours</li>
+            <li>Private car with driver, fuel, tolls and parking</li>
+            <li>Itinerary planning before your day</li>
+            <li>Hotel pickup and drop-off in central Chongqing</li>
+            <li>WhatsApp support during your whole stay</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What's not included</h3>
+          <ul>
+            <li>Meals and drinks (at cost, paid by you)</li>
+            <li>Attraction tickets</li>
+            <li>Tips — optional, never asked for</li>
+            <li>Hotels and travel insurance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Good to know</p>
+      <h2>Questions we hear a lot.</h2>
+      <details><summary>Is the price really fixed?</summary><p>For 1–4 guests, 8 hours, central Chongqing: yes, ¥1,600 flat, in writing. Bigger groups, longer days or trips outside the city get a written quote before you pay anything.</p></details>
+      <details><summary>Does the guide speak good English?</summary><p>Our guides are interviewed and paid for English ability, not just knowledge. You'll know your guide's name and background before you pay the deposit.</p></details>
+      <details><summary>Can we change the plan mid-day?</summary><p>That's the point of a private day. Your guide will tell you honestly what's realistic in the remaining time, then the car goes where you want.</p></details>
+      <details><summary>What happens in bad weather?</summary><p>Chongqing is foggy and rainy by reputation — most sights still work. If conditions genuinely ruin the day (rare), we restructure the route or move the day free of charge.</p></details>
+      <details><summary>How do deposits and refunds work?</summary><p>¥100 deposit per order reserves the date. Cancel 48+ hours ahead for a full refund of the deposit; within 48 hours we keep the deposit unless we can re-book the team. <a href="/en/legal/refunds/">Full policy →</a></p></details>
+      <details><summary>Do you do multi-day trips?</summary><p>Yes — Dazu Rock Carvings, Wulong karst, Yangtze cruise add-ons and multi-day China routing are all quotable in writing. Start with a message.</p></details>
+    </div>
+  </section>
+
+  <CTASection sku="Private Day with a Local Guide" heading="One day, your pace, our city." />
+</Base>

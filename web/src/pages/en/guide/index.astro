@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+
+const guides = (await getCollection('guides')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title="Chongqing Travel Guides — Written by Locals | CQLocalPal" description="Free, practical guides written by Chongqing locals: your first-night checklist, paying as a visitor, getting connected, non-spicy food, and getting from the airport to your hotel.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">Free guides</p>
+      <h1>Written by locals.<br />Updated by hand.</h1>
+      <p style="font-size:1.2rem;max-width:48ch;">Every guide below is re-checked on the ground, and each one says who verified it and when. No recycled listicles, no AI mush — this is what we'd tell a friend.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <div class="grid">
+        {guides.map((g) => (
+          <article class="card">
+            <h3><a href={`/en/guide/${g.id.replace(/^en\//, '')}/`}>{g.data.title}</a></h3>
+            <p>{g.data.description}</p>
+            <p class="muted small">Verified {g.data.date.toISOString().slice(0, 10)} · {g.data.verifiedBy}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

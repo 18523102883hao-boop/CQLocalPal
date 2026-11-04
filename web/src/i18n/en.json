@@ -1,0 +1,11 @@
+{
+  "nav": { "tours": "Tours", "hosts": "Meet your host", "guide": "Guide", "reviews": "Reviews", "about": "About" },
+  "cta": { "book": "Book your first night", "whatsapp": "Ask a local on WhatsApp", "reserve": "Reserve" },
+  "trust": {
+    "noShopping": "No shopping stops. Ever. Violated = full refund.",
+    "refund": "Cancel before we start, for a full refund.",
+    "guarantee": "Not happy in the first 30 minutes? A full refund.",
+    "response": "A real reply within 30 minutes, 08:00–24:00 Beijing time."
+  },
+  "emptyReviews": "We're welcoming our first guests. Verified reviews will appear here after completed trips."
+}

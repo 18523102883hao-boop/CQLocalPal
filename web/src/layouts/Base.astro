@@ -1,0 +1,116 @@
+---
+import { site, nav } from '../config';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  pageType?: string;
+}
+const { title, description, pageType = 'page' } = Astro.props;
+const path = Astro.url.pathname;
+const canonical = new URL(path, site.url).href;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/icon-180.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="theme-color" content="#173C32" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={canonical} />
+  <!-- TODO_CONFIG: 自托管字体（当前用 Google Fonts CDN 起步，PRD 要求上线前本地化） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency',
+    name: site.name,
+    url: site.url,
+    description,
+    areaServed: 'Chongqing, China',
+    email: site.supportEmail,
+  })} />
+</head>
+<body data-page-type={pageType}>
+  <a href="#main" style="position:absolute;left:-9999px;top:0;" onfocus="this.style.left='8px'" onblur="this.style.left='-9999px'">Skip to content</a>
+  <header class="site">
+    <div class="container">
+      <a class="logo" href="/en/">{site.name}</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main" id="main-nav" aria-label="Main">
+        <ul>
+          {nav.map((item) => (
+            <li><a href={item.href} aria-current={path === item.href || path.startsWith(item.href + '') && item.href !== '/en/' ? 'page' : undefined}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <a class="btn btn-primary" href="/en/booking/">Book your first night</a>
+    </div>
+  </header>
+  <main id="main">
+    <slot />
+  </main>
+  <footer class="site">
+    <div class="container">
+      <div class="cols">
+        <div>
+          <h3>{site.name}</h3>
+          <p class="small">{site.tagline}<br />{site.responsePromise}, {site.supportHours}.</p>
+        </div>
+        <div>
+          <h3>Experiences</h3>
+          <ul>
+            <li><a href="/en/tours/first-night-chongqing/">First Night · ¥399</a></li>
+            <li><a href="/en/tours/concierge/">Local Concierge · ¥199</a></li>
+            <li><a href="/en/tours/private/">Private Day · ¥1,600</a></li>
+            <li><a href="/en/add-ons/non-spicy-food-tour/">Non-Spicy Food Walk · ¥259</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Trust</h3>
+          <ul>
+            <li><a href="/en/legal/no-shopping/">No-shopping promise</a></li>
+            <li><a href="/en/legal/refunds/">Refunds &amp; 30-minute guarantee</a></li>
+            <li><a href="/en/reviews/">Verified reviews</a></li>
+            <li><a href="/en/legal/terms/">Terms</a> · <a href="/en/legal/privacy/">Privacy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Talk to a local</h3>
+          <ul>
+            <li><a href={`https://wa.me/${site.whatsapp}`} rel="noopener">WhatsApp</a></li>
+            <li><a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a></li>
+            <li><a href="/en/faq/">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="legal-line">© 2026 {site.name} · {site.operatorLegalName} · Chongqing, China. Prices in CNY; USD/EUR shown as reference only.</p>
+    </div>
+  </footer>
+  <div class="cta-bar" role="complementary" aria-label="Quick actions">
+    <a class="btn btn-primary" href="/en/booking/">Reserve</a>
+    <a class="btn btn-secondary" href={`https://wa.me/${site.whatsapp}?text=Hi%20CQLocalPal!`} rel="noopener">WhatsApp</a>
+  </div>
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navEl = document.getElementById('main-nav');
+    toggle?.addEventListener('click', () => {
+      const open = navEl?.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(!!open));
+    });
+    if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "first-night": {
+    "slug": "first-night-chongqing",
+    "template": "timeline",
+    "name": "First Night in Chongqing",
+    "priceCny": 399,
+    "priceUnit": "per person",
+    "duration": "About 4 hours",
+    "partySize": "4–6 guests",
+    "pickupType": "airport",
+    "shortPitch": "Land, get connected, check in, and eat your first hotpot with a local by your side.",
+    "depositNote": "Reserve with a ¥100 deposit per order. Balance paid in China.",
+    "approvedForSale": false
+  },
+  "concierge": {
+    "slug": "concierge",
+    "template": "service",
+    "name": "Local Concierge (Remote)",
+    "priceCny": 199,
+    "priceUnit": "per order · up to 4 travellers",
+    "duration": "24-hour service window",
+    "partySize": "1–4 travellers",
+    "pickupType": "remote",
+    "shortPitch": "A real local on WhatsApp before and after you land — SIM, payments, transport, translation.",
+    "depositNote": "¥199 per order. Pay in China or online once payment approval lands.",
+    "approvedForSale": false
+  },
+  "private": {
+    "slug": "private",
+    "template": "quote",
+    "name": "Private Day with a Local Guide",
+    "priceCny": 1600,
+    "priceUnit": "per group · up to 4 · 8 hours",
+    "duration": "8 hours",
+    "partySize": "1–4 guests",
+    "pickupType": "hotel",
+    "shortPitch": "Your own English-speaking guide and driver, at your pace.",
+    "depositNote": "Fixed standard day ¥1,600. Larger groups quoted in writing first.",
+    "approvedForSale": false
+  },
+  "first-night-family": {
+    "slug": "first-night-family",
+    "template": "timeline",
+    "name": "First Night — Family Pace",
+    "priceCny": 399,
+    "priceUnit": "per person · age 6+",
+    "duration": "About 4 hours",
+    "partySize": "Families with kids 6+",
+    "pickupType": "airport",
+    "shortPitch": "The same first night, at family pace: shorter walks, breaks every 45 minutes, mild food options.",
+    "depositNote": "Kids under 6 or car-seat needs: ask us first — we confirm fit before any payment.",
+    "approvedForSale": false
+  },
+  "non-spicy-food-tour": {
+    "slug": "non-spicy-food-tour",
+    "template": "service",
+    "name": "Non-Spicy Food Walk",
+    "priceCny": 259,
+    "priceUnit": "per person · 2 hours",
+    "duration": "2 hours",
+    "partySize": "2–6 guests",
+    "pickupType": "meet-on-site",
+    "shortPitch": "Chongqing flavour without the chilli challenge — four tastings and a drink, all included.",
+    "depositNote": "Severe allergies? Message us first — if we can't keep you safe, we say so and don't sell.",
+    "approvedForSale": false
+  }
+}

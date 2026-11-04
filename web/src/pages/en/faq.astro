@@ -1,0 +1,31 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTASection from '../../components/CTASection.astro';
+import { site } from '../../config';
+---
+<Base title="FAQ | CQLocalPal" description="Booking, deposits, refunds, WhatsApp support hours, languages, payment methods and what happens if plans change — the questions travellers ask us most.">
+  <section>
+    <div class="container" style="max-width:820px;">
+      <p class="eyebrow">FAQ</p>
+      <h1>Fair questions, straight answers.</h1>
+
+      <h2 style="margin-top:2.5rem;">Booking &amp; payment</h2>
+      <details><summary>How do I book?</summary><p>Use the <a href="/en/booking/">booking form</a> or message us on WhatsApp with your dates. We confirm service, host, meeting point and price in writing; a ¥100 deposit per order holds the date. Online card payment is coming as soon as our payment approval lands — today everything is confirmed personally over WhatsApp.</p></details>
+      <details><summary>How do I pay the balance?</summary><p>In China, after your service: Alipay, WeChat Pay or cash. Your host or the confirmation message shows the exact amount before the day itself.</p></details>
+      <details><summary>Which currencies and cards do you take?</summary><p>All our prices are in CNY. The balance is paid through Chinese payment apps or cash; your bank handles conversion. We quote USD/Euro on the site as a reference only.</p></details>
+
+      <h2 style="margin-top:2.5rem;">The service itself</h2>
+      <details><summary>Who exactly will I meet?</summary><p>A named, trained local whose background we send you before the deposit. The person in your WhatsApp chat is the person who shows up — or a founder personally covering, with notice.</p></details>
+      <details><summary>What are your support hours?</summary><p>{site.supportHours}. {site.responsePromise} during those hours. Outside them, we reply as soon as we're back online — the concierge service explains this up front too.</p></details>
+      <details><summary>What languages do you speak?</summary><p>English today. Bahasa Indonesia/Melayu, 한국어 and 日本語 support are rolling out with new hosts — message us and we'll confirm what's live for your dates.</p></details>
+      <details><summary>Can you handle dietary restrictions or kids?</summary><p>Usually, yes — if you tell us first. We carry printed allergy cards, run a family-paced version of the First Night, and we'll honestly decline a booking we can't keep safe.</p></details>
+
+      <h2 style="margin-top:2.5rem;">When things change</h2>
+      <details><summary>What if my flight is delayed?</summary><p>Send us the flight number — we track it and adjust free of charge. The 30-minute guarantee applies whenever we actually meet, whatever hour that is.</p></details>
+      <details><summary>What is the refund policy?</summary><p>Three layers: the 30-minute guarantee (not happy early on, full refund), free cancellation 48+ hours before a service, and a kept deposit inside 48 hours unless we can re-book the team. Full text lives on the <a href="/en/legal/refunds/">refund policy page</a>.</p></details>
+      <details><summary>Are you a licensed travel agency?</summary><p>We operate as a local services company and work with licensed partners for any itinerary component that legally requires a travel-agency licence. Ask us anything specific before booking — we answer plainly.</p></details>
+    </div>
+  </section>
+
+  <CTASection heading="Still curious? Ask a real local." />
+</Base>

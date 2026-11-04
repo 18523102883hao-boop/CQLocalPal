@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /en/booking/
+
+# Sitemap 待部署后开启（TODO_CONFIG）：
+# Sitemap: https://www.cqlocalpal.com/sitemap-index.xml

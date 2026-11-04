@@ -1,0 +1,93 @@
+---
+import Base from '../../../layouts/Base.astro';
+import TrustBar from '../../../components/TrustBar.astro';
+import Price from '../../../components/Price.astro';
+import CTASection from '../../../components/CTASection.astro';
+import { site } from '../../../config';
+
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal! I want to book the First Night in Chongqing (¥399/person). My arrival date is around: ')}`;
+---
+<Base title="First Night in Chongqing — ¥399/person | CQLocalPal" description="Land in Chongqing with a local by your side: airport meet, SIM & payment setup, check-in translated, first hotpot ordered for you. Fixed ¥399/person, no shopping stops, 30-minute refund guarantee.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">Our signature experience · About 4 hours · 4–6 guests</p>
+      <h1>First Night in Chongqing</h1>
+      <p style="font-size:1.2rem;max-width:44ch;">Land, get connected, check in, and eat your first hotpot — with a local handling the hard parts. You just enjoy the city.</p>
+      <p><Price cny={399} unit="per person" id="price" /></p>
+      <p>
+        <a class="btn btn-primary" href="/en/booking/?product=first-night">Reserve with a ¥100 deposit</a>
+        &nbsp;
+        <a class="btn btn-secondary" href={wa} rel="noopener">Ask a question on WhatsApp</a>
+      </p>
+      <p class="muted small">Balance paid in China after your night (Alipay / WeChat Pay / cash). Not happy in the first 30 minutes? Full refund, no argument.</p>
+    </div>
+  </section>
+
+  <section class="white" style="padding-top:1rem;">
+    <div class="container"><TrustBar /></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">How the evening runs</p>
+      <h2>From the arrival hall to your first hotpot.</h2>
+      <div class="steps">
+        <div class="step"><h3>We track your flight</h3><p>Send us your flight number after booking. Delayed or early — we adjust and are there when you actually land.</p></div>
+        <div class="step"><h3>Meet &amp; connect</h3><p>Name sign at the arrival hall. Then we sort your SIM/eSIM and set up ride-hailing and payment apps with you, step by step.</p></div>
+        <div class="step"><h3>Check-in, translated</h3><p>We ride to your hotel together (the car is booked for you; you pay the meter) and handle the registration desk in Chinese.</p></div>
+        <div class="step"><h3>Your first hotpot</h3><p>A locals' restaurant near your hotel — not a tourist trap. We order for the table and tune the spice to your level.</p></div>
+        <div class="step"><h3>The night view</h3><p>A short orientation walk to see the city light up (Hongya Cave or the riverside, depending on where you stay).</p></div>
+        <div class="step"><h3>You know your way back</h3><p>We pin your hotel, the metro and the good breakfast spots in your maps before we say goodnight.</p></div>
+      </div>
+      <p class="muted small" style="margin-top:1.5rem;">Meals, SIM top-ups and rides are paid by you directly at cost — we never take commissions on what you buy.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul>
+            <li>Airport meet &amp; greet with name sign (flight tracked)</li>
+            <li>SIM/eSIM assistance and app setup (ride-hailing, payments, maps)</li>
+            <li>Hotel check-in help and registration translation</li>
+            <li>Hotpot dinner guidance — we order and explain</li>
+            <li>Short night-view orientation walk</li>
+            <li>WhatsApp support for your whole stay</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What's not included</h3>
+          <ul>
+            <li>Your meal, SIM top-up and transport fares (at cost, paid by you)</li>
+            <li>Hotel and attraction tickets</li>
+            <li>Personal travel insurance</li>
+            <li>Tips — always optional, never asked for</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Good to know</p>
+      <h2>Questions we hear a lot.</h2>
+      <details><summary>What if my flight is delayed or lands very late?</summary><p>We track your flight and adjust free of charge. If your flight lands after 23:00, we move dinner to a late-night spot or shift the plan — tell us in advance and we'll confirm what works.</p></details>
+      <details><summary>I don't eat spicy food at all. Is hotpot still possible?</summary><p>Absolutely. Chongqing hotpot has mild broths (tomato, mushroom) and we order non-spicy dishes alongside. If you'd rather skip hotpot, we take you to dumplings or noodle soup instead — same price.</p></details>
+      <details><summary>How does payment work?</summary><p>Reserve with a ¥100 deposit per order (online card payment coming soon — currently arranged via WhatsApp). The balance is paid in China after the night by Alipay, WeChat Pay or cash.</p></details>
+      <details><summary>How many people will be in the group?</summary><p>Maximum 6 travellers per host. Families or groups of 4+ can also request a private version of this night.</p></details>
+      <details><summary>What is the 30-minute guarantee exactly?</summary><p>If in the first 30 minutes on the ground you feel this isn't for you, tell us and we refund everything you've paid — including the deposit — and help you get to your hotel on your own. <a href="/en/legal/refunds/">Full policy →</a></p></details>
+      <details><summary>Are there any shopping stops?</summary><p>Never. No tea houses, no "local factories", no jade. Our hosts are paid properly and forbidden from taking commissions. <a href="/en/legal/no-shopping/">Our no-shopping promise →</a></p></details>
+    </div>
+  </section>
+
+  <CTASection sku="First Night in Chongqing" heading="Arriving soon? Let's sort your first night." />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'Product', name: 'First Night in Chongqing',
+    description: 'Airport meet, SIM and payment setup, check-in translation, first hotpot with a local host.',
+    brand: { '@type': 'Brand', name: 'CQLocalPal' },
+    offers: { '@type': 'Offer', price: '399', priceCurrency: 'CNY', availability: 'https://schema.org/InStock' },
+  })} />
+</Base>

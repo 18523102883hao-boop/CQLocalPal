@@ -1,0 +1,20 @@
+---
+import { site } from '../config';
+interface Props {
+  sku?: string;
+  heading?: string;
+}
+const { sku = 'first-night', heading = 'Still deciding? Ask a real local.' } = Astro.props;
+const text = encodeURIComponent(`Hi CQLocalPal! I'm interested in: ${sku}. My arrival date is around: `);
+---
+<section class="sand">
+  <div class="container" style="text-align:center;">
+    <h2>{heading}</h2>
+    <p class="muted">{site.responsePromise} · {site.supportHours}</p>
+    <p>
+      <a class="btn btn-primary" href={`https://wa.me/${site.whatsapp}?text=${text}`} rel="noopener">Chat on WhatsApp</a>
+      &nbsp;
+      <a class="btn btn-secondary" href="/en/booking/">Start a booking</a>
+    </p>
+  </div>
+</section>

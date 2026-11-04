@@ -1,0 +1,20 @@
+---
+import Price from './Price.astro';
+interface Props {
+  href: string;
+  name: string;
+  priceCny: number;
+  unit?: string;
+  meta: string;
+  pitch: string;
+  hero?: boolean;
+}
+const { href, name, priceCny, unit, meta, pitch, hero = false } = Astro.props;
+---
+<article class:list={['card', { 'hero-card': hero }]}>
+  <p class="eyebrow">{meta}</p>
+  <h3><a href={href}>{name}</a></h3>
+  <p>{pitch}</p>
+  <p><Price cny={priceCny} unit={unit} /></p>
+  <p><a class="btn btn-primary" href={href}>{hero ? 'See your first night' : 'Learn more'}</a></p>
+</article>

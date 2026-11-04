@@ -1,0 +1,27 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { site } from '../../../config';
+---
+<Base title="The No-Shopping Promise | CQLocalPal" description="No shopping stops, no commission stalls, no 'local factory' detours — written into every booking, with a free-service penalty if we ever break it.">
+  <section>
+    <div class="container" style="max-width:760px;">
+      <p class="eyebrow">Legal</p>
+      <h1>The no-shopping promise</h1>
+      <div class="prose">
+        <p>China's tourism industry runs on a quiet tax: guides who earn from shops, not guests. Tea houses you never asked for, "local factories" that are showrooms, jade galleries with three-hour detours. You know the genre. So do we — and it ends at our doorstep.</p>
+        <h2>The promise</h2>
+        <ul>
+          <li>Your host never takes you to a shop for commission. Not one, not "just a quick look".</li>
+          <li>We earn zero commission on anything you buy — meals, SIMs, tickets, crafts.</li>
+          <li>Recommendations come from use, not margin. If we send you to a noodle shop, it's because we eat there.</li>
+        </ul>
+        <h2>How we keep it</h2>
+        <p>Hosts are paid per service, above the agency-guide market rate, and accepting any kickback is a firing offence. Shops that offer us deals get told no, once, and reported to partners if persistent.</p>
+        <h2>The penalty</h2>
+        <p>If any CQLocalPal team member breaks this promise during your service, <strong>that service is free</strong> — refund of everything paid — and we ask you to tell us at <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a> so it never happens twice.</p>
+        <h2>Why this matters to us</h2>
+        <p>Every experienced China traveller has one horror-story shopping day. We're building the company we'd have wanted on our own first trips — and that company does not sell its guests' afternoons.</p>
+      </div>
+    </div>
+  </section>
+</Base>

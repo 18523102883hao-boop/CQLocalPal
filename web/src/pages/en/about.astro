@@ -1,0 +1,61 @@
+---
+import Base from '../../layouts/Base.astro';
+import CTASection from '../../components/CTASection.astro';
+import { site } from '../../config';
+---
+<Base title="About CQLocalPal | Chongqing, with someone local" description="Why we started CQLocalPal: a founder who arrived in Chongqing as a foreigner, a local team, and three rules we refuse to break — no shopping, honest prices, verified reviews.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">About us</p>
+      <h1>Chongqing is hard to enter.<br /><em>It shouldn't feel that way.</em></h1>
+      <p style="font-size:1.2rem;max-width:48ch;">CQLocalPal exists because one of our founders once landed in this city with a dead phone, an app that wouldn't accept a card, and a hotel desk that couldn't read a passport name. The city was wonderful. The first six hours weren't. We fix the six hours.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <p class="eyebrow">Mission</p>
+      <h2>Make the first hours in Chongqing feel like being met by a friend.</h2>
+      <p>Not a tour. Not a transfer. The specific relief of "someone who knows this place is handling it" — from the moment the plane doors open.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Vision · 2029</p>
+      <h2>The default first night in China for independent travellers.</h2>
+      <p>Start in Chongqing. Prove the model in the city we know street by street. Then carry the same promise — a named local, fixed prices, no shopping — to every Chinese city that intimidates first-timers, in the languages they actually speak.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <p class="eyebrow">Values</p>
+      <h2>Three rules we refuse to break.</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>No shopping stops. Ever.</h3>
+          <p>Not "less shopping", not "transparent commission". None. Hosts are paid properly and fired for taking kickbacks — from tea houses, jade shops, silk factories, all of it. When the rule costs us a lucrative partnership, the rule wins.</p>
+        </div>
+        <div class="card">
+          <h3>Honest prices, in writing.</h3>
+          <p>One price per service, confirmed on WhatsApp before you pay anything. If a cost is yours (meals, SIM, fares), we say so up front and never mark it up. Surprises are for birthdays, not invoices.</p>
+        </div>
+        <div class="card">
+          <h3>Admit what we don't know.</h3>
+          <p>New company, first season, no fake five-star wall. We'd rather say "we're new — here's our 30-minute guarantee" than borrow credibility. If a request is outside our competence, we say no and point you to someone better.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Practical questions</p>
+      <h2>Who runs this, and how do I reach you?</h2>
+      <p>Operated by {site.operatorLegalName}. Real humans answer WhatsApp and email — {site.responsePromise.toLowerCase()}, {site.supportHours}. For anything formal: <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>.</p>
+    </div>
+  </section>
+
+  <CTASection heading="Coming to Chongqing? Say hi before you fly." />
+</Base>

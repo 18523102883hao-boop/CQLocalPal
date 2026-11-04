@@ -1,0 +1,61 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { site } from '../../../config';
+import products from '../../../data/products.json';
+
+const preselect = Astro.url.searchParams.get('product') ?? '';
+const list = Object.values(products);
+---
+<Base title="Book Your Service | CQLocalPal" description="Reserve your First Night, Concierge, Private Day or Food Walk. ¥100 deposit per order holds your date — confirmed in writing on WhatsApp before you pay anything.">
+  <section>
+    <div class="container" style="max-width:720px;">
+      <p class="eyebrow">Booking</p>
+      <h1>Reserve your date.</h1>
+      <p style="font-size:1.1rem;">Fill this in and it opens a WhatsApp chat with everything pre-written — you just press send. We confirm host, meeting point and price in writing before any payment. {site.responsePromise.toLowerCase()}, {site.supportHours}.</p>
+
+      <form class="booking" id="booking-form">
+        <label for="f-product">Service</label>
+        <select id="f-product" required>
+          {list.map((p) => (
+            <option value={p.slug} selected={preselect === p.slug}>{p.name} — ¥{p.priceCny.toLocaleString('en-US')} {p.priceUnit}</option>
+          ))}
+        </select>
+
+        <label for="f-date">Arrival / service date (or "flexible")</label>
+        <input id="f-date" type="text" placeholder="e.g. 18 Nov 2026, or flexible" required />
+
+        <label for="f-party">Travellers</label>
+        <input id="f-party" type="number" min="1" max="12" value="2" required />
+
+        <label for="f-name">Your name (optional)</label>
+        <input id="f-name" type="text" placeholder="What should we call you?" />
+
+        <p class="hint">Nothing is sent to a server — the button below opens WhatsApp with this summary. Deposit ¥{site.deposit.cny}/US${site.deposit.usd} per order after we confirm; balance in China. Online card payment coming soon.</p>
+
+        <p style="margin-top:1.5rem;">
+          <button type="submit" class="btn btn-primary">Send via WhatsApp</button>
+          &nbsp;
+          <a class="btn btn-secondary" href={`mailto:${site.supportEmail}?subject=Booking request`}>Prefer email</a>
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ whatsapp: site.whatsapp }}>
+    document.getElementById('booking-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const product = document.getElementById('f-product');
+      const date = document.getElementById('f-date').value.trim();
+      const party = document.getElementById('f-party').value;
+      const name = document.getElementById('f-name').value.trim();
+      const lines = [
+        'Hi CQLocalPal! Booking request:',
+        `• Service: ${product.options[product.selectedIndex].text}`,
+        `• Date: ${date}`,
+        `• Travellers: ${party}`,
+      ];
+      if (name) lines.push(`• Name: ${name}`);
+      window.open(`https://wa.me/${whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+    });
+  </script>
+</Base>

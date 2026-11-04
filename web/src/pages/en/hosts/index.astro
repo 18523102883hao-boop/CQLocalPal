@@ -1,0 +1,48 @@
+---
+import Base from '../../../layouts/Base.astro';
+import CTASection from '../../../components/CTASection.astro';
+import { site } from '../../../config';
+---
+<Base title="Meet Your Host | CQLocalPal" description="A named person, not a call centre: meet the local team behind CQLocalPal and how we recruit, train and pay our hosts properly.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">The people</p>
+      <h1>A named person,<br />not a call centre.</h1>
+      <p style="font-size:1.2rem;max-width:48ch;">The biggest lie in tour platforms is "local experiences" delivered by whoever answered the gig app that morning. We run it the other way round: you'll know your host's name and background before you pay a deposit, and the person in your WhatsApp is the person at the arrival hall.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <p class="eyebrow">Who we are today</p>
+      <h2>A small Chongqing team. Starting small on purpose.</h2>
+      <p>CQLocalPal is a young, independent company built in Chongqing — by people who grew up here and by a founder who arrived as a foreigner and remembers exactly how the first night felt. We're in our first season, which means two honest things: we're still collecting our first verified reviews, and every single guest gets founders-level attention, because the founders are the ones doing your welcome.</p>
+      <p>As our host team grows, real names, photos and language profiles appear here — never stock photos, never borrowed faces.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">How hosts join</p>
+      <h2>We recruit locals, train them, and pay them properly.</h2>
+      <div class="grid">
+        <div class="card"><h3>Interviewed in English</h3><p>Language ability is tested in conversation, not claimed on a form. Our standard: can you handle a tired, confused traveller at 23:00?</p></div>
+        <div class="card"><h3>Trained on our SOPs</h3><p>Airport meet, check-in help, payment setup, food ordering — every host runs the same playbook, then earns freedom to improvise within it.</p></div>
+        <div class="card"><h3>No commissions. Ever.</h3><p>Hosts are paid per service, properly, above the agency-guide market rate. They are forbidden from taking a single kuai of commission from shops — and so are we.</p></div>
+        <div class="card"><h3>Reviewed by guests</h3><p>Every review on our site is tied to a completed, verifiable order. A host with slipping ratings gets retrained or let go.</p></div>
+      </div>
+      <p class="muted small" style="margin-top:1.5rem;">Worried about being new? So are we — and we answer it with the 30-minute guarantee, not with promises. <a href="/en/legal/refunds/">How the guarantee works →</a></p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <p class="eyebrow">Become a host</p>
+      <h2>Speak great English? Live in Chongqing? Let's talk.</h2>
+      <p>We're building a small host bench across the languages our guests actually speak. You set availability around your own life; we handle bookings, training and payments. Per-service pay is discussed openly at interview and is deliberately above what agencies pay guides.</p>
+      <p><a class="btn btn-secondary" href={`mailto:${site.supportEmail}?subject=Host application — CQLocalPal`}>Apply by email</a></p>
+    </div>
+  </section>
+
+  <CTASection heading="Want a local by your side? Start with one message." />
+</Base>

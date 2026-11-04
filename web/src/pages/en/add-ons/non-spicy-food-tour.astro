@@ -1,0 +1,81 @@
+---
+import Base from '../../../layouts/Base.astro';
+import TrustBar from '../../../components/TrustBar.astro';
+import Price from '../../../components/Price.astro';
+import CTASection from '../../../components/CTASection.astro';
+import { site } from '../../../config';
+
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal! I want to join the Non-Spicy Food Walk (¥259/person). My date is around: ')}`;
+---
+<Base title="Non-Spicy Food Walk — ¥259/person | CQLocalPal" description="Two hours of Chongqing flavour without the chilli challenge: four tastings and a drink included, a local who translates and orders, and an allergy card in Chinese. ¥259/person.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">Add-on · 2 hours · 2–6 guests · Evening</p>
+      <h1>Non-Spicy Food Walk</h1>
+      <p style="font-size:1.2rem;max-width:46ch;">Everyone says Chongqing food is a fire alarm. It doesn't have to be. This walk proves the city has a whole gentle side — dumplings, tomato-egg noodles, sweet soups — that locals eat every day and tourists never find.</p>
+      <p><Price cny={259} unit="per person · 2 hours" id="price" /></p>
+      <p>
+        <a class="btn btn-primary" href="/en/booking/?product=non-spicy-food-tour">Reserve a spot</a>
+        &nbsp;
+        <a class="btn btn-secondary" href={wa} rel="noopener">Ask about your date</a>
+      </p>
+      <p class="muted small">Four tastings and one drink included — that's the walk. Anything extra you buy is at cost, and we never take commission.</p>
+    </div>
+  </section>
+
+  <section class="white" style="padding-top:1rem;">
+    <div class="container"><TrustBar /></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">The walk</p>
+      <h2>Four stops, zero chilli emergencies.</h2>
+      <div class="steps">
+        <div class="step"><h3>Stop 1 · Soup dumplings</h3><p>A neighbourhood shāo mài and wonton shop run by the same family for decades. Clear broth, ginger, vinegar — no heat at all.</p></div>
+        <div class="step"><h3>Stop 2 · Tomato-egg noodles</h3><p>Chongqing's other noodle: 番茄鸡蛋面, sweet-sour tomato broth with a silky egg ribbon. Proof xiaomian has a gentle cousin.</p></div>
+        <div class="step"><h3>Stop 3 · Tofu pudding rice</h3><p>Dòuhuā fàn — silky tofu over rice with a mild savoury sauce. Locals queue for this at breakfast; most foreigners never hear about it.</p></div>
+        <div class="step"><h3>Stop 4 · Sweet finish</h3><p>Brown-sugar rice cakes and iced brown-sugar jelly (冰粉) — the dessert Chongqing eats to cool down. One local drink included.</p></div>
+      </div>
+      <p class="muted small" style="margin-top:1.5rem;">Route runs through local back streets (Jiaotong Street / Guanyinqiao area). Exact stops flex with the day — vendors close, we adapt. Vegetarian? We run a meat-free version of the same walk, same price.</p>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul>
+            <li>Four tastings and one local drink</li>
+            <li>An English-speaking local who orders and translates</li>
+            <li>A printed "no chilli, no peanuts"-style card in Chinese</li>
+            <li>Spice-level coaching: how to say 不要辣 (bú yào là — no chilli)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What's not included</h3>
+          <ul>
+            <li>Anything you order beyond the tastings</li>
+            <li>Transport to the meeting point</li>
+            <li>Tips — optional, never asked for</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Good to know</p>
+      <h2>Questions we hear a lot.</h2>
+      <details><summary>I have a severe allergy. Is this safe?</summary><p>Message us <em>before</em> booking. We carry printed allergy cards and brief every kitchen, but we won't pretend cross-contamination risks don't exist in open food stalls. If we can't keep you safe, we say so and don't sell.</p></details>
+      <details><summary>What if I actually want to try a little spice?</summary><p>Say so. We'll scale up gradually — 微辣 (wēi là, mild) exists and your guide will judge what your table can handle.</p></details>
+      <details><summary>Is this also good for kids?</summary><p>Yes — it's genuinely the most kid-friendly food experience we run. Under 6s join free if they share your tastings.</p></details>
+      <details><summary>Where do we meet?</summary><p>A metro-station meeting point in the walk area, sent with your confirmation. Late? Message the group chat and we hold your first tasting.</p></details>
+      <details><summary>Can you do this as a private walk?</summary><p>Yes — same route, your party only. Private version ¥699 per group up to 6; message us and we'll set it up.</p></details>
+    </div>
+  </section>
+
+  <CTASection sku="Non-Spicy Food Walk" heading="Come hungry. Leave converted." />
+</Base>

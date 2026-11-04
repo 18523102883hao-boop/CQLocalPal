@@ -1,0 +1,9 @@
+---
+import prices from '../data/prices.json';
+interface Props { cny: number; unit?: string; id?: string; }
+const { cny, unit = 'per person', id } = Astro.props;
+const usd = Math.round(cny / prices.cnyPerUsd);
+const eur = Math.round(cny / prices.cnyPerEur);
+---
+<span class="price" id={id}>¥{cny.toLocaleString('en-US')} <small>{unit}</small></span>
+<span class="ref-price">≈ US${usd} / €{eur} · Approx., {prices.updatedAt}</span>

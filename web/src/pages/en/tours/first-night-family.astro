@@ -1,0 +1,82 @@
+---
+import Base from '../../../layouts/Base.astro';
+import TrustBar from '../../../components/TrustBar.astro';
+import Price from '../../../components/Price.astro';
+import CTASection from '../../../components/CTASection.astro';
+import { site } from '../../../config';
+
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi CQLocalPal! I want the First Night — Family Pace (¥399/person). Kids' ages: ")}`;
+---
+<Base title="First Night — Family Pace, ¥399/person | CQLocalPal" description="The same first-night welcome, rebuilt for families: shorter walks, a break every 45 minutes, mild food first, early finish. Airport meet, SIM and payment setup, check-in help. ¥399/person, kids 6+.">
+  <section>
+    <div class="container">
+      <p class="eyebrow">Family pace · About 4 hours · Kids 6+ · Airport meet</p>
+      <h1>First Night — Family Pace</h1>
+      <p style="font-size:1.2rem;max-width:46ch;">Travelling with kids changes everything. This is our First Night rebuilt for families: gentler food, shorter walks, breaks built in, and nobody melts down at 22:00.</p>
+      <p><Price cny={399} unit="per person · age 6+" id="price" /></p>
+      <p>
+        <a class="btn btn-primary" href="/en/booking/?product=first-night-family">Reserve with a ¥100 deposit</a>
+        &nbsp;
+        <a class="btn btn-secondary" href={wa} rel="noopener">Tell us about your kids</a>
+      </p>
+      <p class="muted small">Kids under 6, or need a car seat? Message us first — we confirm fit honestly before any payment.</p>
+    </div>
+  </section>
+
+  <section class="white" style="padding-top:1rem;">
+    <div class="container"><TrustBar /></div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">What changes for families</p>
+      <h2>Same city. Kinder evening.</h2>
+      <div class="grid">
+        <div class="card"><h3>Short legs</h3><p>Walking segments capped at about 15 minutes, with lifts and escalators planned in — Chongqing is vertical, we route around the stairs.</p></div>
+        <div class="card"><h3>A break every 45 minutes</h3><p>Toilets, drinks, sitting down, whatever the kids need. The evening flexes around them, not the other way round.</p></div>
+        <div class="card"><h3>Mild food first</h3><p>Soup dumplings, tomato-broth hotpot, egg fried rice — real Chongqing flavour without the chilli shock. We order for the table and adjust live.</p></div>
+        <div class="card"><h3>Early finish</h3><p>Wrapped up by about 21:00, with your hotel pinned in maps, breakfast spots marked, and everyone tired in the good way.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="white">
+    <div class="container">
+      <div class="grid">
+        <div class="card">
+          <h3>What's included</h3>
+          <ul>
+            <li>Airport meet with name sign (flight tracked)</li>
+            <li>SIM/eSIM and app setup for the family</li>
+            <li>Hotel check-in and registration help</li>
+            <li>Family-friendly dinner with ordering help</li>
+            <li>Short, kid-proof orientation walk</li>
+            <li>WhatsApp support for your whole stay</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What's not included</h3>
+          <ul>
+            <li>Meals, SIM top-ups and transport fares (at cost)</li>
+            <li>Car seats and strollers (can be arranged — ask first)</li>
+            <li>Hotels, attraction tickets, travel insurance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p class="eyebrow">Good to know</p>
+      <h2>Questions parents ask.</h2>
+      <details><summary>What about kids under 6?</summary><p>Usually fine — but message us first. We check timing, walking distance and stroller practicality for your specific arrival, and we won't sell you something that won't work.</p></details>
+      <details><summary>Can you arrange a car seat?</summary><p>Yes, with advance notice — tell us the child's age and we'll confirm the right seat. It's rented at cost, no markup.</p></details>
+      <details><summary>My child has food allergies. Can you handle that?</summary><p>We carry printed allergy cards in Chinese and brief the kitchen directly. For severe allergies, message us before booking — if we can't keep your child safe, we say so and don't take the booking.</p></details>
+      <details><summary>What if the kids crash early?</summary><p>Then we finish early — check-in, dinner, done. You only ever pay for what you actually did, and the 30-minute guarantee applies here too.</p></details>
+      <details><summary>Do you run this in bad weather?</summary><p>Yes — routes change, not the welcome. We lean on covered walkways, malls with views and shorter hops if it's pouring.</p></details>
+    </div>
+  </section>
+
+  <CTASection sku="First Night — Family Pace" heading="Arriving with the family? We've got you." />
+</Base>
