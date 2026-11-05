@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { guide } = Astro.props;
 const { Content } = await render(guide);
 ---
-<Base title={`${guide.data.title} | CQLocalPal Guide`} description={guide.data.description}>
+<Base title={`${guide.data.title} | CQ Buddy Guide`} description={guide.data.description}>
   <section>
     <div class="container" style="max-width:760px;">
       <p class="eyebrow">Guide · verified {guide.data.date.toISOString().slice(0, 10)} by {guide.data.verifiedBy}</p>

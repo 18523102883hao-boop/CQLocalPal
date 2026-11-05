@@ -6,7 +6,7 @@ import products from '../../../data/products.json';
 const preselect = Astro.url.searchParams.get('product') ?? 'concierge';
 const list = Object.values(products);
 ---
-<Base title="Request a Service | CQLocalPal" description="Send your dates and we'll confirm scope, host, price and refund terms in writing before any payment. Remote support ¥200; experiences on inquiry.">
+<Base title="Request a Service | CQ Buddy" description="Send your dates and we'll confirm scope, host, price and refund terms in writing before any payment. Remote support ¥200; experiences on inquiry.">
   <section>
     <div class="container" style="max-width:720px;">
       <p class="eyebrow">Booking request</p>
@@ -62,7 +62,7 @@ const list = Object.values(products);
       const name = document.getElementById('f-name').value.trim();
       const notes = document.getElementById('f-notes').value.trim();
       const lines = [
-        'Hi CQLocalPal! Booking request:',
+        'Hi CQ Buddy! Booking request:',
         `• Service: ${product.options[product.selectedIndex].text}`,
         `• Dates: ${date}`,
         `• Travellers: ${party}`,

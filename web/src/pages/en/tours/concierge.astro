@@ -5,9 +5,9 @@ import Price from '../../../components/Price.astro';
 import CTASection from '../../../components/CTASection.astro';
 import { site } from '../../../config';
 
-const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal! I want local support for my trip (¥200/order). My dates are around: ')}`;
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQ Buddy! I want local support for my trip (¥200/order). My dates are around: ')}`;
 ---
-<Base title="Local Concierge — Remote Support ¥200/order | CQLocalPal" description="A real Chongqing local on WhatsApp for your first 72 hours: payments, apps, transport, translation, restaurant calls and re-planning. ¥200 per order, up to 4 travellers, 30-minute first response.">
+<Base title="Local Concierge — Remote Support ¥200/order | CQ Buddy" description="A real Chongqing local on WhatsApp for your first 72 hours: payments, apps, transport, translation, restaurant calls and re-planning. ¥200 per order, up to 4 travellers, 30-minute first response.">
   <section>
     <div class="container">
       <p class="eyebrow">Remote · 72-hour trip window · 1–4 travellers</p>
@@ -111,7 +111,7 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocal
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org', '@type': 'Service', name: 'Local Concierge (Remote)',
     serviceType: 'Remote travel assistance', areaServed: 'Chongqing, China',
-    provider: { '@type': 'Organization', name: 'CQLocalPal' },
+    provider: { '@type': 'Organization', name: 'CQ Buddy' },
     offers: { '@type': 'Offer', price: '200', priceCurrency: 'CNY' },
   })} />
 </Base>

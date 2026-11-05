@@ -7,7 +7,7 @@ const guides = (await getCollection('guides')).sort((a, b) => a.data.date.valueO
 const reviewedAt = guides.reduce<string>((acc, g) => (g.data.date.toISOString() > acc ? g.data.date.toISOString() : acc), guides[0]?.data.date.toISOString() ?? '');
 const whatsapp = site.whatsapp;
 ---
-<TravelKit title="Your Chongqing Travel Kit | CQLocalPal" description="Save five verified guides, phrase cards and our public contact to your phone — readable on the plane, no internet needed.">
+<TravelKit title="Your Chongqing Travel Kit | CQ Buddy" description="Save five verified guides, phrase cards and our public contact to your phone — readable on the plane, no internet needed.">
   <section>
     <div class="container" style="max-width:760px;">
       <p class="eyebrow">Public offline kit · English</p>

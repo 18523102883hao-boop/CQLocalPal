@@ -5,9 +5,9 @@ import Price from '../../../components/Price.astro';
 import CTASection from '../../../components/CTASection.astro';
 import { site } from '../../../config';
 
-const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal! I want to book the First Night in Chongqing (¥399/person). My arrival date is around: ')}`;
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQ Buddy! I want to book the First Night in Chongqing (¥399/person). My arrival date is around: ')}`;
 ---
-<Base title="First Night in Chongqing — ¥399/person | CQLocalPal" description="Land in Chongqing with a local by your side: airport meet, SIM & payment setup, check-in translated, first hotpot ordered for you. Fixed ¥399/person, no shopping stops, 30-minute refund guarantee.">
+<Base title="First Night in Chongqing — ¥399/person | CQ Buddy" description="Land in Chongqing with a local by your side: airport meet, SIM & payment setup, check-in translated, first hotpot ordered for you. Fixed ¥399/person, no shopping stops, 30-minute refund guarantee.">
   <section>
     <div class="container">
       <p class="eyebrow">Our signature experience · About 4 hours · 4–6 guests</p>
@@ -87,7 +87,7 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocal
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org', '@type': 'Product', name: 'First Night in Chongqing',
     description: 'Airport meet, SIM and payment setup, check-in translation, first hotpot with a local host.',
-    brand: { '@type': 'Brand', name: 'CQLocalPal' },
+    brand: { '@type': 'Brand', name: 'CQ Buddy' },
     offers: { '@type': 'Offer', price: '399', priceCurrency: 'CNY', availability: 'https://schema.org/InStock' },
   })} />
 </Base>
