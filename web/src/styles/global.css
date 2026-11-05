@@ -107,8 +107,13 @@ nav.main a[aria-current="page"] { color: var(--clay); }
 footer.site { background: var(--ink); color: var(--paper); padding: 3rem 0 6rem; margin-top: 3rem; }
 footer.site a { color: var(--paper); }
 footer.site .cols { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-footer.site h3 { color: var(--paper); font-size: 1.1rem; }
-footer.site ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+footer.site h3 { color: var(--paper); font-size: 1.05rem; letter-spacing: 0.02em; margin: 0 0 0.65rem; }
+footer.site ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+footer.site ul a { font-size: 0.95rem; font-weight: 500; text-decoration: underline; text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, var(--paper) 45%, transparent); }
+footer.site ul a:hover { text-decoration-color: var(--paper); }
+footer.site .brand-tagline { margin: 0 0 0.35rem; color: color-mix(in srgb, var(--paper) 90%, transparent); }
+footer.site .brand-hours { margin: 0; color: color-mix(in srgb, var(--paper) 75%, transparent); }
+.nowrap { white-space: nowrap; }
 .legal-line { border-top: 1px solid color-mix(in srgb, var(--paper) 25%, transparent); margin-top: 2rem; padding-top: 1rem; font-size: 0.85rem; color: color-mix(in srgb, var(--paper) 75%, transparent); }
 
 /* Mobile bottom CTA bar */

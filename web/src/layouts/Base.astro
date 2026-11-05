@@ -63,7 +63,8 @@ const canonical = new URL(path, site.url).href;
       <div class="cols">
         <div>
           <h3>{site.name}</h3>
-          <p class="small">{site.tagline}<br />{site.responsePromise}, {site.supportHours}.</p>
+          <p class="small brand-tagline">{site.tagline}</p>
+          <p class="small brand-hours">{site.responsePromise}, <span class="nowrap">{site.supportHours}</span>.</p>
         </div>
         <div>
           <h3>Services</h3>
@@ -95,7 +96,7 @@ const canonical = new URL(path, site.url).href;
           </ul>
         </div>
       </div>
-      <p class="legal-line">© 2026 {site.name} · {site.operatorLegalName} · Chongqing, China. Prices in CNY; USD/EUR shown as indicative reference only.</p>
+      <p class="legal-line">© 2026 {site.name} · Chongqing, China. Prices in CNY; USD/EUR shown as indicative reference only.</p>
     </div>
   </footer>
   <div class="cta-bar" role="complementary" aria-label="Quick actions">
