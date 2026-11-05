@@ -3,6 +3,7 @@ title: "Non-Spicy Food in Chongqing: A Survival (and Enjoyment) Guide"
 description: "Chongqing's gentle side: the dishes, phrases and neighbourhoods where you can eat magnificently without a single chilli."
 date: 2026-11-04
 verifiedBy: "CQLocalPal ops team (field-checked in Chongqing)"
+category: food
 ---
 
 Let's kill the myth first: Chongqing food is not a chilli challenge with extra steps. Locals eat mild food constantly — breakfast is rarely spicy, kids eat here happily, and the city has a whole parallel cuisine of soups, dumplings and sweets. You just need to know where to look, because the loud red signage points at the fire, not the comfort.

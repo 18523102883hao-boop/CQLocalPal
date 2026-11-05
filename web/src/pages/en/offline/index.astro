@@ -1,0 +1,28 @@
+---
+import TravelKit from '../../../layouts/TravelKit.astro';
+---
+<TravelKit title="You're offline | CQLocalPal" description="Public offline explainer — no personal data.">
+  <section>
+    <div class="container" style="max-width:640px;">
+      <p class="eyebrow">Offline</p>
+      <h1>You're offline.</h1>
+      <p style="font-size:1.1rem;">This page doesn't know anything about you or your trip — that's deliberate. Here's what still works, and what doesn't:</p>
+      <div class="card" style="margin-top:1.5rem;">
+        <h3>Works offline</h3>
+        <ul>
+          <li>Your <a href="/en/travel-kit/">saved travel kit</a> — if you saved it while online</li>
+          <li>Reading, copying Chinese phrases, the arrival checklist</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:1rem;">
+        <h3>Needs internet</h3>
+        <ul>
+          <li>WhatsApp chats and calls — messages queue in your own app</li>
+          <li>Booking, payment and any order status — we never confirm money matters from a cached page</li>
+          <li>Current prices, availability and the latest guide updates</li>
+        </ul>
+      </div>
+      <p style="margin-top:1.5rem;">Once you're back online, <a href="/en/">return to the homepage</a> or open your saved kit.</p>
+    </div>
+  </section>
+</TravelKit>

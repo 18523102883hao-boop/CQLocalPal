@@ -3,6 +3,7 @@ title: "From CKG Airport to Your Hotel: Every Option, Ranked"
 description: "Metro, official taxi, Didi or airport bus — honest timings, real fares and the scams to skip when leaving Chongqing Jiangbei Airport."
 date: 2026-11-04
 verifiedBy: "CQLocalPal ops team (field-checked in Chongqing)"
+category: arrival
 ---
 
 Jiangbei Airport (CKG) sits about 20–25 km north of Jiefangbei, the downtown most visitors stay in. Four ways cover that distance; two of them are how we'd send our own family, one is fine in a pinch, and one you should refuse every time.

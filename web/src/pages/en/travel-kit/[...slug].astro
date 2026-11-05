@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from 'astro:content';
+import TravelKit from '../../../layouts/TravelKit.astro';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((g) => ({
+    params: { slug: g.id.replace(/^en\//, '') },
+    props: { guide: g },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+---
+<TravelKit title={`${guide.data.title} · Offline copy`} description={guide.data.description}>
+  <section>
+    <div class="container" style="max-width:760px;">
+      <p class="eyebrow">Offline copy · Verified {guide.data.date.toISOString().slice(0, 10)}</p>
+      <h1>{guide.data.title}</h1>
+      <article class="prose">
+        <Content />
+      </article>
+      <hr style="border:none;border-top:1px solid var(--sand);margin:2rem 0 1.25rem;" />
+      <p class="small muted">This offline copy was checked on {guide.data.date.toISOString().slice(0, 10)}. Transport times, prices and rules change — re-check anything high-stakes when you're back online.</p>
+      <p><a class="btn btn-secondary" href="/en/travel-kit/">Return to saved kit</a></p>
+      <p class="small" style="margin-top:1.5rem;"><a href={`/en/guide/${guide.id.replace(/^en\//, '')}/`}>Online version &amp; current updates <span class="muted">(internet required)</span> →</a></p>
+    </div>
+  </section>
+</TravelKit>

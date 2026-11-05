@@ -5,15 +5,16 @@ import TrustBar from '../../../components/TrustBar.astro';
 import CTASection from '../../../components/CTASection.astro';
 import products from '../../../data/products.json';
 
-const t = Object.values(products).filter((p) => ['first-night-chongqing', 'concierge', 'private', 'first-night-family'].includes(p.slug));
+const concierge = products['concierge'];
+const others = ['first-night', 'private', 'first-night-family'].map((k) => products[k]);
 const addon = products['non-spicy-food-tour'];
 ---
-<Base title="Tours & Services in Chongqing | CQLocalPal" description="Small-group first nights, a ¥199 remote local concierge, private days with your own guide and driver, family-paced arrivals and a non-spicy food walk. Fixed prices, no shopping stops, verified reviews.">
+<Base title="Services in Chongqing | CQLocalPal" description="Remote local support from ¥200, first-night welcomes, private days with your own guide, family-paced arrivals and a non-spicy food walk. Proposed prices confirmed in writing — no payment before confirmation.">
   <section>
     <div class="container">
-      <p class="eyebrow">Tours &amp; services</p>
+      <p class="eyebrow">Services</p>
       <h1>Chongqing, with someone local.</h1>
-      <p style="font-size:1.2rem;max-width:46ch;">Five services, one promise: a real local by your side, fixed prices in writing, no shopping stops, and your money back if the first 30 minutes prove us wrong.</p>
+      <p style="font-size:1.2rem;max-width:46ch;">Remote support is open now. In-person experiences are in inquiry mode while we build the host bench — tell us your dates and we'll confirm team, transport and total in writing before any payment.</p>
     </div>
   </section>
 
@@ -24,18 +25,20 @@ const addon = products['non-spicy-food-tour'];
   <section>
     <div class="container">
       <div class="grid">
-        {t.map((p) => (
+        <ProductCard hero href={`/en/tours/${concierge.slug}/`} name={concierge.name} priceCny={concierge.priceCny} unit={concierge.priceUnit} meta={`${concierge.duration} · Remote · Main service`} pitch={concierge.shortPitch} status={concierge.status} ctaLabel={concierge.ctaLabel} />
+        {others.map((p) => (
           <ProductCard
-            href={p.slug === 'first-night-chongqing' ? `/en/tours/${p.slug}/` : `/en/tours/${p.slug}/`}
+            href={`/en/tours/${p.slug}/`}
             name={p.name}
             priceCny={p.priceCny}
             unit={p.priceUnit}
             meta={`${p.duration} · ${p.partySize}`}
             pitch={p.shortPitch}
-            hero={p.slug === 'first-night-chongqing'}
+            status={p.status}
+            ctaLabel={p.ctaLabel}
           />
         ))}
-        <ProductCard href={`/en/add-ons/${addon.slug}/`} name={addon.name} priceCny={addon.priceCny} unit={addon.priceUnit} meta={`${addon.duration} · ${addon.partySize}`} pitch={addon.shortPitch} />
+        <ProductCard href={`/en/add-ons/${addon.slug}/`} name={addon.name} priceCny={addon.priceCny} unit={addon.priceUnit} meta={`${addon.duration} · ${addon.partySize}`} pitch={addon.shortPitch} status={addon.status} ctaLabel={addon.ctaLabel} />
       </div>
     </div>
   </section>
@@ -43,15 +46,15 @@ const addon = products['non-spicy-food-tour'];
   <section class="white">
     <div class="container">
       <p class="eyebrow">How booking works</p>
-      <h2>Three steps. No payment maze.</h2>
+      <h2>Request first. Payment last.</h2>
       <div class="steps">
-        <div class="step"><h3>Pick &amp; reserve</h3><p>Choose a service and send your dates — the booking form or WhatsApp, your call. ¥100 deposit per order holds the date.</p></div>
-        <div class="step"><h3>We confirm in writing</h3><p>Host name, meeting point, price, refund terms — all confirmed on WhatsApp before you pay anything.</p></div>
-        <div class="step"><h3>Pay the balance in China</h3><p>After the service: Alipay, WeChat Pay or cash. Online card payment is coming once our payment approval lands.</p></div>
+        <div class="step"><h3>Send your dates</h3><p>The booking form or WhatsApp. For remote support we check the 72-hour window capacity; for experiences we check the team.</p></div>
+        <div class="step"><h3>Written confirmation</h3><p>Scope, host or backup, meeting details, price, refund terms — all confirmed in writing within our support hours.</p></div>
+        <div class="step"><h3>Pay after confirmation</h3><p>Remote support: ¥100 deposit to a verified merchant channel, ¥100 balance after your window. Experiences: deposit only once team and transport are locked.</p></div>
       </div>
       <p class="muted small" style="margin-top:1.5rem;">Every order is covered by the 30-minute guarantee and the no-shopping promise. <a href="/en/legal/refunds/">Refund policy →</a> · <a href="/en/legal/no-shopping/">No-shopping promise →</a></p>
     </div>
   </section>
 
-  <CTASection heading="Not sure which fits? Tell us your dates and we'll suggest." />
+  <CTASection primary heading="Not sure which fits? Tell us your dates and we'll suggest." />
 </Base>

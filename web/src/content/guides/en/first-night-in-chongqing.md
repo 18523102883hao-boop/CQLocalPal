@@ -3,6 +3,7 @@ title: "Your First Night in Chongqing: An Arrival Checklist"
 description: "The exact steps from plane to pillow — airport, SIM, money, hotel check-in and dinner — with the mistakes foreign visitors make most."
 date: 2026-11-04
 verifiedBy: "CQLocalPal ops team (field-checked in Chongqing)"
+category: arrival
 ---
 
 Chongqing Jiangbei International Airport (CKG) is modern, well-signed in English, and — for a city of 30 million — remarkably manageable. What trips people up isn't the airport. It's the forty minutes after it. Here's the sequence that works.

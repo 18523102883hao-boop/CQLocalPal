@@ -10,6 +10,7 @@ const guides = defineCollection({
     description: z.string(),
     date: z.coerce.date(),
     verifiedBy: z.string(),
+    category: z.enum(['arrival', 'getting-connected', 'food']).default('arrival'),
   }),
 });
 

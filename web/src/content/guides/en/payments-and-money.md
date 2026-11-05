@@ -3,6 +3,7 @@ title: "Paying in Chongqing as a Visitor"
 description: "What actually works in 2026: phone payments first, cards sometimes, cash almost never — and how to set it all up before you land."
 date: 2026-11-04
 verifiedBy: "CQLocalPal ops team (field-checked in Chongqing)"
+category: getting-connected
 ---
 
 The single most common question we get: "Can I even pay for things in China?" The honest answer has changed completely in the last few years. Here's the current state of play.

@@ -1,0 +1,34 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site } from '../../config';
+---
+<Base title="Contact | CQLocalPal" description="Reach a real local: WhatsApp first, email as backup, support hours 08:00–24:00 Beijing time with a 30-minute first-response promise.">
+  <section>
+    <div class="container" style="max-width:720px;">
+      <p class="eyebrow">Contact</p>
+      <h1>Talk to a human.</h1>
+      <p style="font-size:1.15rem;">{site.responsePromise}, {site.supportHours}. Outside those hours your message waits and gets answered when we're back — we're deliberately small, and that's the point.</p>
+
+      <div class="grid" style="margin-top:2rem;">
+        <div class="card">
+          <h3>WhatsApp (fastest)</h3>
+          <p>The channel we run services on. One tap opens a chat — no app account needed on our side beyond the number.</p>
+          <p><a class="btn btn-primary" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal!')}`} rel="noopener">Open WhatsApp</a></p>
+        </div>
+        <div class="card">
+          <h3>Email (backup channel)</h3>
+          <p>Slower than WhatsApp but never blocked. Use it if WhatsApp is unreachable from your network, and tell us your preferred channel.</p>
+          <p><a class="btn btn-secondary" href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a></p>
+        </div>
+      </div>
+
+      <h2 style="margin-top:2.5rem;">Before you travel</h2>
+      <p>Tell us one channel you trust (WhatsApp, email, or another messenger you already use). We record it with your booking, so a single blocked app can never strand you mid-trip. This backup-channel step is part of the service, not an afterthought.</p>
+
+      <h2 style="margin-top:2rem;">Emergencies in China</h2>
+      <p>Police <strong>110</strong> · Fire <strong>119</strong> · Ambulance <strong>120</strong>. Call first, then message us — we help you communicate with the authorities, hotel or hospital in Chinese, including by phone.</p>
+
+      <p class="muted small" style="margin-top:2rem;">Operator: {site.operatorLegalName}. We never ask for card numbers, passwords or passport photos over chat.</p>
+    </div>
+  </section>
+</Base>

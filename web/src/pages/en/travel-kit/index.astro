@@ -1,0 +1,302 @@
+---
+import TravelKit from '../../../layouts/TravelKit.astro';
+import { site } from '../../../config';
+import { getCollection } from 'astro:content';
+
+const guides = (await getCollection('guides')).sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+const reviewedAt = guides.reduce<string>((acc, g) => (g.data.date.toISOString() > acc ? g.data.date.toISOString() : acc), guides[0]?.data.date.toISOString() ?? '');
+const whatsapp = site.whatsapp;
+---
+<TravelKit title="Your Chongqing Travel Kit | CQLocalPal" description="Save five verified guides, phrase cards and our public contact to your phone — readable on the plane, no internet needed.">
+  <section>
+    <div class="container" style="max-width:760px;">
+      <p class="eyebrow">Public offline kit · English</p>
+      <h1>Your Chongqing travel kit.</h1>
+      <p style="font-size:1.15rem;">Save the essentials before your flight. Read them when you're offline.</p>
+      <p class="muted small" id="net-state" aria-live="polite">Checking connection…</p>
+
+      <!-- 资料包卡 -->
+      <div class="card" style="margin-top:1.5rem;" id="pack-card">
+        <h2 style="font-size:1.4rem;">Trip essentials pack</h2>
+        <p class="small muted">
+          Language: English · Content verified: <span id="pack-reviewed">{reviewedAt.slice(0, 10)}</span> ·
+          Version: <span id="pack-version">checking…</span> · Size: <span id="pack-size">—</span>
+        </p>
+        <ul class="small" id="pack-contents">
+          {guides.map((g) => (
+            <li><a href={`/en/travel-kit/${g.id.replace(/^en\//, '')}/`}>{g.data.title}</a></li>
+          ))}
+          <li>Arrival checklist &amp; Chinese phrase cards (below)</li>
+          <li>Public contact card (below)</li>
+        </ul>
+        <p class="kit-status" id="kit-status" aria-live="polite">Checking saved state…</p>
+        <div class="progress" id="kit-progress" hidden><div></div></div>
+        <p id="kit-detail" class="small muted"></p>
+        <p>
+          <button class="btn btn-primary" id="btn-save" disabled>Save for offline</button>
+          &nbsp;
+          <button class="btn btn-secondary" id="btn-update" hidden>Update</button>
+          <button class="btn btn-secondary" id="btn-retry" hidden>Retry</button>
+          <button class="btn btn-secondary" id="btn-clear" hidden>Remove saved kit</button>
+        </p>
+      </div>
+
+      <!-- 到达前检查表 -->
+      <h2 style="margin-top:2.5rem;">Before you fly — 60-second checklist</h2>
+      <div class="card">
+        <ul class="phrase-list">
+          <li>☐ Save your hotel's <strong>Chinese address and phone number</strong> into your own notes app (from your booking confirmation — we never see or store it).</li>
+          <li>☐ Install Alipay and WeChat; link a card while you're on home Wi-Fi.</li>
+          <li>☐ Get an eSIM or roaming plan sorted — see the connectivity guide.</li>
+          <li>☐ Save this kit with the button above.</li>
+          <li>☐ Agree a backup contact channel with us (WhatsApp + email is the usual pair).</li>
+        </ul>
+      </div>
+
+      <!-- 短语卡 -->
+      <h2 style="margin-top:2.5rem;">Phrase cards</h2>
+      <div class="grid">
+        <div class="card"><p class="zh">请带我去这个地址。</p><p class="small">"Please take me to this address." <em>(Show your saved Chinese address.)</em></p></div>
+        <div class="card"><p class="zh">入口在几楼？</p><p class="small">"Which floor is the entrance on?" — vital in a city built in layers.</p></div>
+        <div class="card"><p class="zh">请不要放辣。</p><p class="small">"No chilli, please." Saying it is completely normal here.</p></div>
+        <div class="card"><p class="zh">这个含花生吗？</p><p class="small">"Does this contain peanuts?" — swap in your allergen. For severe allergies, also carry a printed card and tell us before any food tour.</p></div>
+      </div>
+
+      <!-- 公共联系卡 -->
+      <h2 style="margin-top:2.5rem;">Public contact card</h2>
+      <div class="card">
+        <p><strong>WhatsApp:</strong> <a href={`https://wa.me/${whatsapp}`} rel="noopener">+{whatsapp}</a> <span class="muted small">(needs internet)</span><br />
+        <strong>Email:</strong> <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a><br />
+        <strong>Hours:</strong> {site.supportHours}<br />
+        <strong>Promise:</strong> {site.responsePromise.toLowerCase()}</p>
+        <p class="small muted">Tip: screenshot this card before you fly, so the number is in your photos even without any app.</p>
+      </div>
+
+      <!-- 安装引导 -->
+      <h2 style="margin-top:2.5rem;" id="install-heading">Add to your home screen</h2>
+      <div class="card" id="install-help">
+        <p><strong>Android (Chrome):</strong> tap the browser menu → "Add to Home screen" or "Install app".</p>
+        <p><strong>iPhone / iPad (Safari):</strong> tap the Share button → "Add to Home Screen".</p>
+        <p class="small muted" id="standalone-note" hidden>You're already opening this from a home-screen icon. Nice.</p>
+        <p class="small muted">In-app browsers (Instagram, WeChat built-in) may not support installing — "Open in Safari/Chrome" first if the option is missing.</p>
+      </div>
+
+      <!-- 隐私说明 -->
+      <h2 style="margin-top:2.5rem;">What's in this kit — and what's not</h2>
+      <div class="kit-note">
+        <p class="small" style="margin:0;">This pack contains <strong>public information only</strong>: guides, phrases, our public contact. It never stores your hotel, passport, flights, allergies, orders or payment details — save those to your own device's notes. Your order confirmation is delivered separately online; local copies you save yourself won't update if plans change.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="update-banner" id="update-banner" hidden>
+    <span>An update is ready.</span>
+    <a href="#" id="btn-reload">Reload when you're ready</a>
+    <a href="#" id="btn-later">Later</a>
+  </div>
+
+  <script is:inline define:vars={{ whatsapp }}>
+    (() => {
+      const LS_KEY = 'cqpal-kit-meta';
+      const $ = (id) => document.getElementById(id);
+      const els = {
+        net: $('net-state'), status: $('kit-status'), detail: $('kit-detail'),
+        progress: $('kit-progress'), bar: document.querySelector('#kit-progress > div'),
+        save: $('btn-save'), update: $('btn-update'), retry: $('btn-retry'), clear: $('btn-clear'),
+        version: $('pack-version'), size: $('pack-size'), reviewed: $('pack-reviewed'),
+        banner: $('update-banner'),
+      };
+
+      // ---- 网络状态提示 ----
+      const netText = () => els.net.textContent = navigator.onLine
+        ? 'Online — you can save, update or re-check this kit.'
+        : "Offline — what you've saved still works; saving and updating need a connection.";
+      addEventListener('online', netText); addEventListener('offline', netText); netText();
+
+      // ---- standalone 检测 ----
+      if (matchMedia('(display-mode: standalone)').matches) {
+        $('install-heading').hidden = true; $('install-help').hidden = true;
+      }
+
+      if (!('caches' in window) || !('serviceWorker' in window)) {
+        els.status.textContent = "Offline saving isn't available in this browser.";
+        els.detail.textContent = 'Everything on this page still works online — you can also use your browser\u2019s print or save-page feature.';
+        els.save.hidden = true;
+        return;
+      }
+
+      let manifest = null;   // 当前最新清单
+      let saved = null;      // localStorage 元数据 {version, savedAt}
+      let saving = false;
+
+      const readLS = () => { try { return JSON.parse(localStorage.getItem(LS_KEY)); } catch { return null; } };
+      const writeLS = (v) => localStorage.setItem(LS_KEY, JSON.stringify(v));
+
+      const packCache = (v) => `cqpal-pack-${v}`;
+      const stagingCache = (v) => `cqpal-pack-staging-${v}`;
+
+      async function sha256hex(buf) {
+        const h = await crypto.subtle.digest('SHA-256', buf);
+        return [...new Uint8Array(h)].map((b) => b.toString(16).padStart(2, '0')).join('');
+      }
+
+      function setProgress(done, total) {
+        els.progress.hidden = false;
+        els.bar.style.width = `${Math.round((done / total) * 100)}%`;
+        els.status.textContent = `Saving ${done} of ${total} files…`;
+      }
+
+      function buttons({ save, update, retry, clear }) {
+        els.save.hidden = !save; els.update.hidden = !update;
+        els.retry.hidden = !retry; els.clear.hidden = !clear;
+      }
+
+      // ---- 完整性检查：只信 Cache Storage 里的真实资源 ----
+      async function checkIntegrity(version) {
+        const cache = await caches.open(packCache(version));
+        const missing = [];
+        for (const e of manifest.entries.filter((e) => e.role === 'required')) {
+          const hit = await cache.match(e.url);
+          if (!hit) { missing.push(e.url); continue; }
+          const buf = await hit.arrayBuffer();
+          if (buf.byteLength !== e.bytes || await sha256hex(buf) !== e.sha256) missing.push(e.url);
+        }
+        return missing;
+      }
+
+      // ---- 渲染状态 ----
+      async function render() {
+        saved = readLS();
+        buttons({ save: false, update: false, retry: false, clear: false });
+        if (!manifest) { els.status.textContent = 'Could not reach the kit server. Your saved copy, if any, still works.'; els.retry.hidden = false; return; }
+
+        els.version.textContent = manifest.version;
+        els.size.textContent = `${(manifest.totalBytes / 1024 / 1024).toFixed(1)} MiB`;
+
+        if (!saved || !saved.version) {
+          els.status.textContent = 'Not saved on this device.';
+          els.detail.textContent = navigator.onLine ? 'Save this kit while you have an internet connection.' : 'Connect to the internet to save.';
+          buttons({ save: navigator.onLine, update: false, retry: false, clear: false });
+          return;
+        }
+
+        // 有保存记录 → 实际校验
+        const miss = await checkIntegrity(saved.version).catch(() => ['error']);
+        if (miss.length === 0) {
+          const stale = (Date.now() - new Date(manifest.reviewedAt).getTime()) > 30 * 864e5;
+          const newer = saved.version !== manifest.version;
+          els.status.textContent = newer
+            ? `Saved on this device · ${saved.savedAt.slice(0, 10)} — a newer kit is available.`
+            : `Saved on this device · ${saved.savedAt.slice(0, 10)}`;
+          els.detail.textContent = stale
+            ? `This copy was checked on ${manifest.reviewedAt.slice(0, 10)}. Some details may have changed — re-check high-change info (transport, prices) when you're back online.`
+            : (newer ? 'Update keeps the old copy until the new one is fully verified.' : 'All required files verified.');
+          buttons({ save: false, update: newer && navigator.onLine, retry: false, clear: true });
+        } else if (miss.length === manifest.entries.filter((e) => e.role === 'required').length) {
+          els.status.textContent = 'Your saved files are no longer available.';
+          els.detail.textContent = 'The browser may have cleaned them, or site data was cleared. Save again while online.';
+          buttons({ save: navigator.onLine, update: false, retry: false, clear: false });
+        } else {
+          els.status.textContent = "The kit wasn't fully saved.";
+          els.detail.textContent = `Missing or changed: ${miss.length} file(s). Your old complete version, if any, is untouched.`;
+          buttons({ save: false, update: false, retry: navigator.onLine, clear: true });
+        }
+      }
+
+      // ---- 保存（含暂存区、hash 校验、失败保留旧版） ----
+      async function doSave(version) {
+        if (saving) return; saving = true;
+        buttons({ save: false, update: false, retry: false, clear: false });
+        els.detail.textContent = '';
+        const staging = await caches.open(stagingCache(version));
+        const required = manifest.entries.filter((e) => e.role === 'required');
+        let done = 0; const failed = [];
+        const queue = [...required];
+        async function worker() {
+          while (queue.length) {
+            const e = queue.shift();
+            try {
+              const res = await fetch(e.url, { cache: 'no-store' });
+              if (!res.ok) throw new Error('http ' + res.status);
+              const buf = await res.arrayBuffer();
+              if (buf.byteLength !== e.bytes) throw new Error('size mismatch');
+              if (await sha256hex(buf) !== e.sha256) throw new Error('hash mismatch');
+              await staging.put(e.url, new Response(buf, { headers: { 'Content-Type': e.contentType } }));
+            } catch (err) { failed.push(e.url); }
+            done++; setProgress(done, required.length);
+          }
+        }
+        await Promise.all([worker(), worker(), worker()]);
+        els.progress.hidden = true;
+
+        if (failed.length) {
+          await caches.delete(stagingCache(version));
+          els.status.textContent = "The kit wasn't fully saved.";
+          els.detail.textContent = `Couldn't fetch ${failed.length} file(s) — often a weak connection. Retry; your old complete version, if any, is untouched.`;
+          buttons({ save: false, update: false, retry: navigator.onLine, clear: true });
+        } else {
+          // 全部通过 → 激活新包，再删旧包
+          const target = await caches.open(packCache(version));
+          const keys = await staging.keys();
+          for (const req of keys) await target.put(req, await staging.match(req));
+          await caches.delete(stagingCache(version));
+          const old = saved && saved.version && saved.version !== version ? saved.version : null;
+          if (old) await caches.delete(packCache(old));
+          writeLS({ version, savedAt: new Date().toISOString() });
+          els.status.textContent = `Saved on this device · ${new Date().toISOString().slice(0, 10)}`;
+          els.detail.textContent = 'All required files verified. Readable on the plane — no internet needed.';
+          buttons({ save: false, update: false, retry: false, clear: true });
+        }
+        saving = false;
+      }
+
+      // ---- 清除：只删本项目前缀 ----
+      async function doClear() {
+        const all = await caches.keys();
+        await Promise.all(all.filter((k) => k.startsWith('cqpal-pack-')).map((k) => caches.delete(k)));
+        localStorage.removeItem(LS_KEY);
+        els.status.textContent = 'Saved travel-kit files removed from this device.';
+        els.detail.textContent = 'To remove the home-screen icon itself, delete it like any app icon.';
+        buttons({ save: navigator.onLine, update: false, retry: false, clear: false });
+      }
+
+      // ---- 初始：取 latest.json + 清单 ----
+      async function init() {
+        try {
+          const latest = await (await fetch('/offline-pack/en/latest.json', { cache: 'no-store' })).json();
+          manifest = await (await fetch(`/offline-pack/en/${latest.version}.json`, { cache: 'no-store' })).json();
+        } catch { manifest = null; }
+        await render();
+      }
+
+      els.save.addEventListener('click', () => manifest && doSave(manifest.version));
+      els.update.addEventListener('click', () => manifest && doSave(manifest.version));
+      els.retry.addEventListener('click', init);
+      els.clear.addEventListener('click', () => { if (confirm('Remove the saved kit from this device?')) doClear(); });
+
+      // ---- Service Worker 注册 + 更新提示（不在付款/表单流程强刷） ----
+      let userClickedReload = false;
+      async function registerSW() {
+        try {
+          const reg = await navigator.serviceWorker.register('/en/sw.js', { scope: '/en/' });
+          const promptUpdate = () => {
+            if (!reg.waiting) return;
+            els.banner.hidden = false;
+            $('btn-reload').onclick = (e) => { e.preventDefault(); userClickedReload = true; reg.waiting.postMessage({ type: 'SKIP_WAITING' }); };
+            $('btn-later').onclick = (e) => { e.preventDefault(); els.banner.hidden = true; };
+          };
+          reg.addEventListener('updatefound', () => {
+            const sw = reg.installing;
+            sw && sw.addEventListener('statechange', () => { if (sw.state === 'installed' && navigator.serviceWorker.controller) promptUpdate(); });
+          });
+          promptUpdate();
+          navigator.serviceWorker.addEventListener('controllerchange', () => { if (userClickedReload) location.reload(); });
+        } catch { /* 无SW环境：普通网页继续 */ }
+      }
+
+      init();
+      if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') registerSW();
+      else if ('serviceWorker' in navigator) registerSW(); // 本地开发也注册便于测试
+    })();
+  </script>
+</TravelKit>

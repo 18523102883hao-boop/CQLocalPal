@@ -8,13 +8,16 @@ interface Props {
   meta: string;
   pitch: string;
   hero?: boolean;
+  status?: string;
+  ctaLabel?: string;
 }
-const { href, name, priceCny, unit, meta, pitch, hero = false } = Astro.props;
+const { href, name, priceCny, unit, meta, pitch, hero = false, status = 'inquiry', ctaLabel = 'Learn more' } = Astro.props;
 ---
 <article class:list={['card', { 'hero-card': hero }]}>
   <p class="eyebrow">{meta}</p>
   <h3><a href={href}>{name}</a></h3>
   <p>{pitch}</p>
-  <p><Price cny={priceCny} unit={unit} /></p>
-  <p><a class="btn btn-primary" href={href}>{hero ? 'See your first night' : 'Learn more'}</a></p>
+  <p><Price cny={priceCny} unit={unit} proposed={status === 'inquiry'} /></p>
+  {status === 'inquiry' && <p class="status-note">Inquiry only — we confirm team, date and total in writing before any payment.</p>}
+  <p><a class="btn btn-primary" href={href}>{ctaLabel}</a></p>
 </article>

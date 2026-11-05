@@ -27,13 +27,11 @@ const canonical = new URL(path, site.url).href;
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content={canonical} />
-  <!-- TODO_CONFIG: 自托管字体（当前用 Google Fonts CDN 起步，PRD 要求上线前本地化） -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!-- 字体已自托管（OFL 许可），离线页不依赖外部请求 -->
+  <link rel="stylesheet" href="/fonts/fonts.css" />
   <script type="application/ld+json" set:html={JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'TravelAgency',
+    '@type': 'Organization',
     name: site.name,
     url: site.url,
     description,
@@ -42,7 +40,7 @@ const canonical = new URL(path, site.url).href;
   })} />
 </head>
 <body data-page-type={pageType}>
-  <a href="#main" style="position:absolute;left:-9999px;top:0;" onfocus="this.style.left='8px'" onblur="this.style.left='-9999px'">Skip to content</a>
+  <a href="#main" class="skip-link">Skip to content</a>
   <header class="site">
     <div class="container">
       <a class="logo" href="/en/">{site.name}</a>
@@ -50,11 +48,11 @@ const canonical = new URL(path, site.url).href;
       <nav class="main" id="main-nav" aria-label="Main">
         <ul>
           {nav.map((item) => (
-            <li><a href={item.href} aria-current={path === item.href || path.startsWith(item.href + '') && item.href !== '/en/' ? 'page' : undefined}>{item.label}</a></li>
+            <li><a href={item.href} aria-current={path.startsWith(item.href) ? 'page' : undefined}>{item.label}</a></li>
           ))}
         </ul>
       </nav>
-      <a class="btn btn-primary" href="/en/booking/">Book your first night</a>
+      <a class="btn btn-primary header-cta" href="/en/tours/concierge/">Get local support</a>
     </div>
   </header>
   <main id="main">
@@ -68,12 +66,13 @@ const canonical = new URL(path, site.url).href;
           <p class="small">{site.tagline}<br />{site.responsePromise}, {site.supportHours}.</p>
         </div>
         <div>
-          <h3>Experiences</h3>
+          <h3>Services</h3>
           <ul>
+            <li><a href="/en/tours/concierge/">Local Concierge · ¥200</a></li>
             <li><a href="/en/tours/first-night-chongqing/">First Night · ¥399</a></li>
-            <li><a href="/en/tours/concierge/">Local Concierge · ¥199</a></li>
             <li><a href="/en/tours/private/">Private Day · ¥1,600</a></li>
             <li><a href="/en/add-ons/non-spicy-food-tour/">Non-Spicy Food Walk · ¥259</a></li>
+            <li><a href="/en/travel-kit/">Offline travel kit</a></li>
           </ul>
         </div>
         <div>
@@ -82,7 +81,8 @@ const canonical = new URL(path, site.url).href;
             <li><a href="/en/legal/no-shopping/">No-shopping promise</a></li>
             <li><a href="/en/legal/refunds/">Refunds &amp; 30-minute guarantee</a></li>
             <li><a href="/en/reviews/">Verified reviews</a></li>
-            <li><a href="/en/legal/terms/">Terms</a> · <a href="/en/legal/privacy/">Privacy</a></li>
+            <li><a href="/en/legal/terms/">Terms</a> · <a href="/en/legal/privacy/">Privacy</a> · <a href="/en/legal/cookies/">Cookies</a></li>
+            <li><a href="/en/legal/reviews-policy/">Reviews policy</a></li>
           </ul>
         </div>
         <div>
@@ -90,16 +90,17 @@ const canonical = new URL(path, site.url).href;
           <ul>
             <li><a href={`https://wa.me/${site.whatsapp}`} rel="noopener">WhatsApp</a></li>
             <li><a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a></li>
+            <li><a href="/en/contact/">Contact &amp; backup channels</a></li>
             <li><a href="/en/faq/">FAQ</a></li>
           </ul>
         </div>
       </div>
-      <p class="legal-line">© 2026 {site.name} · {site.operatorLegalName} · Chongqing, China. Prices in CNY; USD/EUR shown as reference only.</p>
+      <p class="legal-line">© 2026 {site.name} · {site.operatorLegalName} · Chongqing, China. Prices in CNY; USD/EUR shown as indicative reference only.</p>
     </div>
   </footer>
   <div class="cta-bar" role="complementary" aria-label="Quick actions">
-    <a class="btn btn-primary" href="/en/booking/">Reserve</a>
-    <a class="btn btn-secondary" href={`https://wa.me/${site.whatsapp}?text=Hi%20CQLocalPal!`} rel="noopener">WhatsApp</a>
+    <a class="btn btn-primary" href="/en/tours/concierge/">Get local support</a>
+    <a class="btn btn-secondary" href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal!')}`} rel="noopener">WhatsApp</a>
   </div>
   <script>
     const toggle = document.querySelector('.menu-toggle');
@@ -108,9 +109,6 @@ const canonical = new URL(path, site.url).href;
       const open = navEl?.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(!!open));
     });
-    if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
-    }
   </script>
 </body>
 </html>

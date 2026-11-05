@@ -3,26 +3,27 @@ import Base from '../../../layouts/Base.astro';
 import { site } from '../../../config';
 import products from '../../../data/products.json';
 
-const preselect = Astro.url.searchParams.get('product') ?? '';
+const preselect = Astro.url.searchParams.get('product') ?? 'concierge';
 const list = Object.values(products);
 ---
-<Base title="Book Your Service | CQLocalPal" description="Reserve your First Night, Concierge, Private Day or Food Walk. ¥100 deposit per order holds your date — confirmed in writing on WhatsApp before you pay anything.">
+<Base title="Request a Service | CQLocalPal" description="Send your dates and we'll confirm scope, host, price and refund terms in writing before any payment. Remote support ¥200; experiences on inquiry.">
   <section>
     <div class="container" style="max-width:720px;">
-      <p class="eyebrow">Booking</p>
-      <h1>Reserve your date.</h1>
-      <p style="font-size:1.1rem;">Fill this in and it opens a WhatsApp chat with everything pre-written — you just press send. We confirm host, meeting point and price in writing before any payment. {site.responsePromise.toLowerCase()}, {site.supportHours}.</p>
+      <p class="eyebrow">Booking request</p>
+      <h1>Tell us your dates.</h1>
+      <p style="font-size:1.1rem;">Fill this in and it opens a WhatsApp chat with everything pre-written — you just press send. A real person replies within 30 minutes during {site.supportHours}. <strong>Nothing is paid at this stage:</strong> we confirm scope, capacity, host and price in writing first; the deposit comes after.</p>
 
       <form class="booking" id="booking-form">
         <label for="f-product">Service</label>
         <select id="f-product" required>
           {list.map((p) => (
-            <option value={p.slug} selected={preselect === p.slug}>{p.name} — ¥{p.priceCny.toLocaleString('en-US')} {p.priceUnit}</option>
+            <option value={p.id} selected={preselect === p.id}>{p.name} — ¥{p.priceCny.toLocaleString('en-US')} {p.priceUnit}{p.status === 'inquiry' ? ' (inquiry)' : ''}</option>
           ))}
         </select>
+        <p class="hint">"(inquiry)" means the team is still being built — we confirm feasibility in writing before any deposit.</p>
 
-        <label for="f-date">Arrival / service date (or "flexible")</label>
-        <input id="f-date" type="text" placeholder="e.g. 18 Nov 2026, or flexible" required />
+        <label for="f-date">Trip / service dates (or "flexible")</label>
+        <input id="f-date" type="text" placeholder="e.g. 18–25 Nov 2026, or flexible" required />
 
         <label for="f-party">Travellers</label>
         <input id="f-party" type="number" min="1" max="12" value="2" required />
@@ -30,7 +31,10 @@ const list = Object.values(products);
         <label for="f-name">Your name (optional)</label>
         <input id="f-name" type="text" placeholder="What should we call you?" />
 
-        <p class="hint">Nothing is sent to a server — the button below opens WhatsApp with this summary. Deposit ¥{site.deposit.cny}/US${site.deposit.usd} per order after we confirm; balance in China. Online card payment coming soon.</p>
+        <label for="f-notes">Anything we should know? (optional)</label>
+        <textarea id="f-notes" rows="3" placeholder="Kids' ages, dietary needs, arrival time, questions…"></textarea>
+
+        <p class="hint">Nothing is sent to our server — the button below opens WhatsApp on your device with this summary. We only see what you choose to send.</p>
 
         <p style="margin-top:1.5rem;">
           <button type="submit" class="btn btn-primary">Send via WhatsApp</button>
@@ -38,6 +42,14 @@ const list = Object.values(products);
           <a class="btn btn-secondary" href={`mailto:${site.supportEmail}?subject=Booking request`}>Prefer email</a>
         </p>
       </form>
+
+      <hr style="border:none;border-top:1px solid var(--sand);margin:2.5rem 0 1.5rem;" />
+      <h2>What happens next</h2>
+      <div class="steps">
+        <div class="step"><h3>We reply</h3><p>Within 30 minutes in support hours: availability, the right service for your group, honest answers.</p></div>
+        <div class="step"><h3>You get it in writing</h3><p>Scope, window, host or backup, meeting details, price, refund terms — on WhatsApp or email, your choice.</p></div>
+        <div class="step"><h3>Then you pay</h3><p>Deposit only after written confirmation, to a verified merchant channel. Balance per the policy of your service.</p></div>
+      </div>
     </div>
   </section>
 
@@ -48,13 +60,15 @@ const list = Object.values(products);
       const date = document.getElementById('f-date').value.trim();
       const party = document.getElementById('f-party').value;
       const name = document.getElementById('f-name').value.trim();
+      const notes = document.getElementById('f-notes').value.trim();
       const lines = [
         'Hi CQLocalPal! Booking request:',
         `• Service: ${product.options[product.selectedIndex].text}`,
-        `• Date: ${date}`,
+        `• Dates: ${date}`,
         `• Travellers: ${party}`,
       ];
       if (name) lines.push(`• Name: ${name}`);
+      if (notes) lines.push(`• Notes: ${notes}`);
       window.open(`https://wa.me/${whatsapp}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
     });
   </script>

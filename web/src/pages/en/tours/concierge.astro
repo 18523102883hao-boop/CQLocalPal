@@ -5,21 +5,21 @@ import Price from '../../../components/Price.astro';
 import CTASection from '../../../components/CTASection.astro';
 import { site } from '../../../config';
 
-const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal! I want the Local Concierge (¥199/order). I arrive around: ')}`;
+const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocalPal! I want local support for my trip (¥200/order). My dates are around: ')}`;
 ---
-<Base title="Local Concierge — Remote Support ¥199/order | CQLocalPal" description="A real Chongqing local on WhatsApp for your whole trip window: SIM & payments, transport, translation, restaurant bookings, re-planning when things change. ¥199 per order, up to 4 travellers.">
+<Base title="Local Concierge — Remote Support ¥200/order | CQLocalPal" description="A real Chongqing local on WhatsApp for your first 72 hours: payments, apps, transport, translation, restaurant calls and re-planning. ¥200 per order, up to 4 travellers, 30-minute first response.">
   <section>
     <div class="container">
-      <p class="eyebrow">Remote · 24-hour service window · 1–4 travellers</p>
-      <h1>Local Concierge</h1>
-      <p style="font-size:1.2rem;max-width:46ch;">A local on your WhatsApp before you fly, while you travel, and after you land. Ask anything — a photo of a menu, a train you can't decode, a plan that just fell apart. We fix it.</p>
-      <p><Price cny={199} unit="per order · up to 4 travellers" id="price" /></p>
+      <p class="eyebrow">Remote · 72-hour trip window · 1–4 travellers</p>
+      <h1>Your local contact for the first 72 hours.</h1>
+      <p style="font-size:1.2rem;max-width:46ch;">Not a bot, not a call centre — one named local on your WhatsApp, from the day before you fly until you're settled in Chongqing. Ask anything, in plain English.</p>
+      <p><Price cny={200} unit="per order · up to 4 travellers" id="price" /></p>
       <p>
-        <a class="btn btn-primary" href="/en/booking/?product=concierge">Start with ¥199</a>
+        <a class="btn btn-primary" href="/en/booking/?product=concierge">Request local support</a>
         &nbsp;
         <a class="btn btn-secondary" href={wa} rel="noopener">Try us on WhatsApp first</a>
       </p>
-      <p class="muted small">{site.responsePromise}, {site.supportHours}.</p>
+      <p class="muted small">{site.responsePromise}, {site.supportHours}. ¥100 deposit after we confirm scope and capacity — never before.</p>
     </div>
   </section>
 
@@ -29,52 +29,89 @@ const wa = `https://wa.me/${site.whatsapp}?text=${encodeURIComponent('Hi CQLocal
 
   <section>
     <div class="container">
-      <p class="eyebrow">What your ¥199 covers</p>
-      <h2>One local, on call, for your window.</h2>
       <div class="grid">
-        <div class="card"><h3>Before you fly</h3><p>Visa and arrival-card questions, eSIM advice, app list to install at home, realistic answers about weather, luggage and what to pack.</p></div>
-        <div class="card"><h3>Getting set up</h3><p>Step-by-step help with payment apps, ride-hailing and maps. Screenshots welcome — we walk you through each screen.</p></div>
-        <div class="card"><h3>On-the-spot translation</h3><p>Photograph a menu, a sign, a pharmacy label — send it, we translate and tell you what to say back.</p></div>
-        <div class="card"><h3>Bookings &amp; changes</h3><p>Restaurant tables, train tickets guidance, and fast re-planning when rain, delays or closed sights wreck your day.</p></div>
-        <div class="card"><h3>Local judgement</h3><p>"Is this normal?" "Is this price fair?" "Is this taxi legit?" Straight answers from someone who lives here.</p></div>
-        <div class="card"><h3>Escalation help</h3><p>Lost passport, hotel dispute, medical visit? We help you communicate with the police, hotel or hospital in Chinese — by phone if needed.</p></div>
+        <div class="card">
+          <h3>What's included</h3>
+          <ul>
+            <li>72 hours of WhatsApp support for your whole travel party (one group chat)</li>
+            <li>A free 20-minute planning call before you fly — apps, eSIM, realistic expectations</li>
+            <li>Payment and ride-hailing app setup, walked through screen by screen</li>
+            <li>On-the-spot translation: menus, signs, pharmacy labels, driver questions</li>
+            <li>Restaurant bookings and re-planning when weather or delays wreck your day</li>
+            <li>Up to 2 short calls to restaurants, hotels or drivers per order (≤15 min each)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>What's not included</h3>
+          <ul>
+            <li>No airport pickup or in-person guiding — this is a remote service</li>
+            <li>No paying on your behalf, no continuous interpretation, no ticket purchasing service</li>
+            <li>No medical or legal advice — we help you communicate with professionals</li>
+            <li>Not a 24/7 hotline: real replies within 30 minutes, {site.supportHours}</li>
+            <li>We can't guarantee a foreign bank card passes every app's checks — we maximise the odds and have fallbacks ready</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="white">
     <div class="container">
-      <p class="eyebrow">How it works</p>
-      <h2>Three steps, then ask us anything.</h2>
+      <p class="eyebrow">How the window runs</p>
+      <h2>Before you fly, while you land, after you're settled.</h2>
       <div class="steps">
-        <div class="step"><h3>Tell us your dates</h3><p>One message on WhatsApp or the booking form. We confirm the plan and your service window.</p></div>
-        <div class="step"><h3>Pay ¥199</h3><p>Currently settled via WhatsApp (online payment coming once approved). Per order, not per person — your whole travel party shares one concierge.</p></div>
-        <div class="step"><h3>Chat for 24 hours</h3><p>Start the window any time — the day before you fly, landing day, or mid-trip. Unused hours don't roll over.</p></div>
+        <div class="step"><h3>Free planning call</h3><p>20 minutes, any time before departure: which apps to install, eSIM choice, your first-day plan, honest answers about money and connectivity.</p></div>
+        <div class="step"><h3>Window starts when you say</h3><p>The day before you fly, landing day, or mid-trip — you pick. 72 hours from that moment, Beijing time, confirmed in writing.</p></div>
+        <div class="step"><h3>Ask anything</h3><p>Photograph the menu, share the error screen, ask "is this price fair?" One chat, up to four travellers, one local who answers personally.</p></div>
+        <div class="step"><h3>Backup when we rest</h3><p>Overlapping windows are capped at three so nobody is over-committed. If your contact is briefly unavailable, a named backup covers.</p></div>
       </div>
+      <p class="muted small" style="margin-top:1.5rem;">The planning call is free and doesn't start your paid window.</p>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <p class="eyebrow">Honest boundaries</p>
-      <h2>What concierge is — and isn't.</h2>
-      <p>We are not an emergency service. For police, fire or ambulance in China call <strong>110 / 119 / 120</strong> first — then message us and we'll help you communicate. We reply within 30 minutes during support hours ({site.supportHours}); outside those hours we answer as soon as we're back online.</p>
-      <p>Travelling longer than 24 hours? Add extra windows at ¥99 each, or consider a <a href="/en/tours/first-night-chongqing/">First Night</a> or <a href="/en/tours/private/">Private Day</a> where a local is physically with you.</p>
+      <p class="eyebrow">Typical moments (examples)</p>
+      <h2>What people actually ask.</h2>
+      <div class="grid">
+        <div class="card"><h3>"My card was declined"</h3><p>Screenshot the error — we identify which step failed, which fallback works, and what to tell your bank.</p></div>
+        <div class="card"><h3>"The hotel can't read my name"</h3><p>We join by phone, spell it in Chinese, confirm the registration went through.</p></div>
+        <div class="card"><h3>"Is this taxi legit?"</h3><p>Photograph the plate and the meter — straight answers from someone who knows the local tells.</p></div>
+        <div class="card"><h3>"Rain killed my gorge trip"</h3><p>We rebuild the day around indoor options and rebook the table you'd pinned.</p></div>
+        <div class="card"><h3>"What's in this dish?"</h3><p>Menu photo in, ingredient list and spice level out — plus the phrase to order the mild version.</p></div>
+        <div class="card"><h3>"The pharmacy label"</h3><p>Send a photo; we translate dosage instructions and confirm with the pharmacist by phone if needed.</p></div>
+      </div>
+      <p class="muted small" style="margin-top:1.25rem;">Examples of the kind of help we give — your window is yours to spend.</p>
     </div>
   </section>
 
   <section class="white">
     <div class="container">
-      <p class="eyebrow">Good to know</p>
-      <h2>Questions we hear a lot.</h2>
-      <details><summary>Do you really answer within 30 minutes?</summary><p>Yes — during {site.supportHours}. That's written into our service promise, and if we ever miss it badly, your window extends for free.</p></details>
-      <details><summary>Is it one chat for all four of us?</summary><p>Yes. One order, one group chat, your whole travel party. Only one phone needs to message us.</p></details>
-      <details><summary>Can you book things for me, like train tickets?</summary><p>We guide you through the official apps (they require your passport) and can reserve restaurants or call venues for you in Chinese. We never add a markup on bookings.</p></details>
-      <details><summary>What languages do you speak?</summary><p>English today; Bahasa Indonesia/Melayu, 한국어 and 日本語 support are rolling out with our local host team. Message us and we'll tell you what's live.</p></details>
-      <details><summary>What if my plans change mid-window?</summary><p>That's exactly what we're for. Missed train, sudden rain, closed attraction — message us and we'll rebuild the plan with you.</p></details>
-      <details><summary>Refund policy?</summary><p>Not used the window yet and your trip is cancelled? Full refund if you message us before the window starts. <a href="/en/legal/refunds/">Full policy →</a></p></details>
+      <p class="eyebrow">Refunds, in one breath</p>
+      <h2>Cancel before your window starts: full refund.<br />Unhappy in the first 30 minutes of real service: full refund.</h2>
+      <p>The full text is two minutes' reading: <a href="/en/legal/refunds/">refund policy →</a>. No-shopping rules apply to everything we touch, remote or not: <a href="/en/legal/no-shopping/">the promise →</a>.</p>
     </div>
   </section>
 
-  <CTASection sku="Local Concierge" heading="One local on WhatsApp. That's the whole pitch." />
+  <section>
+    <div class="container">
+      <p class="eyebrow">Good to know</p>
+      <h2>Questions we hear a lot.</h2>
+      <details><summary>When exactly do the 72 hours start and end?</summary><p>Whenever you choose — the day before departure, landing day, or mid-trip. Start and end are fixed in writing (Beijing time) when you book, so there's no ambiguity at the airport.</p></details>
+      <details><summary>Is this a 24/7 hotline?</summary><p>No — and we'll never pretend otherwise. Real people reply within 30 minutes during {site.supportHours}. Outside those hours your message waits and gets answered as soon as we're back. True emergencies in China: 110 / 119 / 120 first, then message us to help you communicate.</p></details>
+      <details><summary>Will you come to the airport or my hotel?</summary><p>No. This service is deliberately remote — that's what keeps it ¥200 instead of ¥2,000. In-person welcomes are our First Night product (currently inquiry-only while we build the team).</p></details>
+      <details><summary>Can you pay for things on my behalf?</summary><p>No. We guide you through paying yourself; your money never passes through us, and we take zero commission on anything you buy.</p></details>
+      <details><summary>What if I don't use WhatsApp?</summary><p>Tell us — email or another channel you already use works. We agree one backup channel before your window starts, so a single blocked app never strands you.</p></details>
+      <details><summary>Do you guarantee my bank card will link to payment apps?</summary><p>Honestly, no — the final check is always the app's own risk engine. What we guarantee: correct setup sequence, the known-good card path, and a working fallback (cash guidance + offline options) if a card refuses.</p></details>
+      <details><summary>Can the four of us all message you?</summary><p>One group chat, whole travel party, one concierge. One phone or four — same price, same service.</p></details>
+    </div>
+  </section>
+
+  <CTASection primary sku="Local Concierge" heading="One local on WhatsApp. That's the whole pitch." />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org', '@type': 'Service', name: 'Local Concierge (Remote)',
+    serviceType: 'Remote travel assistance', areaServed: 'Chongqing, China',
+    provider: { '@type': 'Organization', name: 'CQLocalPal' },
+    offers: { '@type': 'Offer', price: '200', priceCurrency: 'CNY' },
+  })} />
 </Base>

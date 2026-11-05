@@ -5,11 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/build-offline-pack.mjs",
     "preview": "astro preview",
     "check": "astro check"
   },
   "dependencies": {
     "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.7.4"
   }
 }

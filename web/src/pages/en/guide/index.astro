@@ -1,29 +1,44 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
+import CTASection from '../../../components/CTASection.astro';
 
 const guides = (await getCollection('guides')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const cats = [
+  { id: 'arrival', label: 'First arrival' },
+  { id: 'getting-connected', label: 'Getting connected' },
+  { id: 'food', label: 'Food' },
+];
 ---
-<Base title="Chongqing Travel Guides — Written by Locals | CQLocalPal" description="Free, practical guides written by Chongqing locals: your first-night checklist, paying as a visitor, getting connected, non-spicy food, and getting from the airport to your hotel.">
+<Base title="Chongqing Travel Guides — Written by Locals | CQLocalPal" description="Free, practical guides written by Chongqing locals and verified on the ground: arrival checklists, payments, connectivity, and non-spicy food. Save them to your offline travel kit.">
   <section>
     <div class="container">
       <p class="eyebrow">Free guides</p>
       <h1>Written by locals.<br />Updated by hand.</h1>
-      <p style="font-size:1.2rem;max-width:48ch;">Every guide below is re-checked on the ground, and each one says who verified it and when. No recycled listicles, no AI mush — this is what we'd tell a friend.</p>
+      <p style="font-size:1.2rem;max-width:48ch;">Every guide is re-checked on the ground, and each one says who verified it and when. No recycled listicles — this is what we'd tell a friend. <a href="/en/travel-kit/">Save them for offline →</a></p>
     </div>
   </section>
 
-  <section class="white">
-    <div class="container">
-      <div class="grid">
-        {guides.map((g) => (
-          <article class="card">
-            <h3><a href={`/en/guide/${g.id.replace(/^en\//, '')}/`}>{g.data.title}</a></h3>
-            <p>{g.data.description}</p>
-            <p class="muted small">Verified {g.data.date.toISOString().slice(0, 10)} · {g.data.verifiedBy}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
+  {cats.map((c) => {
+    const list = guides.filter((g) => g.data.category === c.id);
+    if (!list.length) return null;
+    return (
+      <section class:list={[c.id === 'arrival' ? 'white' : '']}>
+        <div class="container">
+          <p class="eyebrow">{c.label}</p>
+          <div class="grid">
+            {list.map((g) => (
+              <article class="card">
+                <h3><a href={`/en/guide/${g.id.replace(/^en\//, '')}/`}>{g.data.title}</a></h3>
+                <p>{g.data.description}</p>
+                <p class="muted small">Verified {g.data.date.toISOString().slice(0, 10)} · {g.data.verifiedBy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <CTASection heading="Prefer a human over a guide? That's literally our service." />
 </Base>

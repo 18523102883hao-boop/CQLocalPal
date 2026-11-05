@@ -1,9 +1,13 @@
 ---
 import prices from '../data/prices.json';
-interface Props { cny: number; unit?: string; id?: string; }
-const { cny, unit = 'per person', id } = Astro.props;
+interface Props { cny: number; unit?: string; id?: string; proposed?: boolean; }
+const { cny, unit = 'per person', id, proposed = false } = Astro.props;
 const usd = Math.round(cny / prices.cnyPerUsd);
 const eur = Math.round(cny / prices.cnyPerEur);
+const fxStale = prices.fxDate === 'pending-update-before-launch';
 ---
-<span class="price" id={id}>¥{cny.toLocaleString('en-US')} <small>{unit}</small></span>
-<span class="ref-price">≈ US${usd} / €{eur} · Approx., {prices.updatedAt}</span>
+<span class="price-line" id={id}>
+  <span class="price">¥{cny.toLocaleString('en-US')} <small>{unit}</small></span>
+  {proposed && <span class="badge">Proposed price</span>}
+  <span class="ref-price">≈ US${usd} / €{eur} · indicative reference only{fxStale && ' · FX verified before launch'}</span>
+</span>

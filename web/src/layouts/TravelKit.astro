@@ -1,0 +1,50 @@
+---
+// 离线阅读版布局：无统计、无CTA栏、无远程资源、noindex。
+// 按钮只提供"返回已存资料包"与"需联网"入口。
+import { site } from '../config';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = '' } = Astro.props;
+const path = Astro.url.pathname;
+const isKitIndex = path === '/en/travel-kit/' || path === '/en/travel-kit';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  {description && <meta name="description" content={description} />}
+  <meta name="robots" content="noindex,follow" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/icon-180.png" />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+  <meta name="theme-color" content="#173C32" />
+</head>
+<body>
+  <header class="site">
+    <div class="container">
+      <a class="logo" href="/en/travel-kit/">{site.name} · Travel kit</a>
+      {!isKitIndex && <a class="btn btn-secondary" href="/en/travel-kit/" style="min-height:40px;padding:0.4rem 0.9rem;">← Saved kit</a>}
+    </div>
+  </header>
+  <main id="main">
+    <slot />
+  </main>
+  <footer class="site" style="margin-top:2rem;">
+    <div class="container">
+      <p class="small">Offline copies of public guides only — no orders, prices or personal data are stored here. <span style="opacity:0.75;">Online services (WhatsApp, booking) need an internet connection.</span></p>
+    </div>
+  </footer>
+  <script>
+    // Travel kit 首次进入即注册 SW（scope /en/）；营销页不注册，也不自动下载资料包
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/en/sw.js', { scope: '/en/' }).catch(() => {});
+    }
+  </script>
+</body>
+</html>

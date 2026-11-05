@@ -1,6 +1,8 @@
 {
-  "source": "Reference rates, updated monthly. CNY is the contract price.",
-  "updatedAt": "2026-11-04",
+  "fxSource": "ECB euro reference rates (informational reference only, not a transaction rate)",
+  "fxSourceUrl": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+  "fxDate": "pending-update-before-launch",
   "cnyPerUsd": 7.1,
-  "cnyPerEur": 7.8
+  "cnyPerEur": 7.8,
+  "note": "TODO_CONFIG: cnyPerUsd/cnyPerEur 为开发占位值，上线前按 ECB 当月数据更新 fxDate 并重新核对；展示时固定标注参考来源与日期，超 35 天未更新应停止展示外币参考价。"
 }

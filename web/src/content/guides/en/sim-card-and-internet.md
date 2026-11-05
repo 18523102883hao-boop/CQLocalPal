@@ -3,6 +3,7 @@ title: "Getting Connected After You Land: SIM, eSIM and the Apps That Matter"
 description: "eSIM vs airport SIM vs roaming — what works behind the firewall, what to install before departure, and the app list locals actually recommend."
 date: 2026-11-04
 verifiedBy: "CQLocalPal ops team (field-checked in Chongqing)"
+category: getting-connected
 ---
 
 Connectivity in China has two layers: getting a data connection (easy) and what that connection can reach (the part people forget). Sort both before you land and the arrival is painless.
