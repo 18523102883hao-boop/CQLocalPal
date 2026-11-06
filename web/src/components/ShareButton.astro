@@ -1,0 +1,41 @@
+---
+interface Props {
+  title: string;
+  text?: string;
+  label?: string;
+}
+const { title, text = '', label = 'Share' } = Astro.props;
+---
+<button type="button" class="share-btn" data-title={title} data-text={text}>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="18" cy="5" r="3"></circle>
+    <circle cx="6" cy="12" r="3"></circle>
+    <circle cx="18" cy="19" r="3"></circle>
+    <line x1="8.6" y1="10.5" x2="15.4" y2="6.5"></line>
+    <line x1="8.6" y1="13.5" x2="15.4" y2="17.5"></line>
+  </svg>
+  <span class="share-label">{label}</span>
+</button>
+<script>
+  document.querySelectorAll('.share-btn').forEach((btn) => {
+    const label = btn.querySelector('.share-label');
+    const original = label ? label.textContent : 'Share';
+    // 不支持 Web Share API 的桌面浏览器退化为复制链接
+    if (!navigator.share && label) label.textContent = 'Copy link';
+    btn.addEventListener('click', async () => {
+      const data = {
+        title: btn.getAttribute('data-title') || document.title,
+        text: btn.getAttribute('data-text') || '',
+        url: location.href,
+      };
+      if (navigator.share) {
+        try { await navigator.share(data); } catch { /* 用户取消，静默 */ }
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(data.url);
+        if (label) { label.textContent = 'Link copied'; setTimeout(() => { label.textContent = original; }, 2000); }
+      } catch { /* 剪贴板不可用时静默 */ }
+    });
+  });
+</script>

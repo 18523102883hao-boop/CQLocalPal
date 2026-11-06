@@ -1,5 +1,6 @@
 ---
 import TravelKit from '../../../layouts/TravelKit.astro';
+import ShareButton from '../../../components/ShareButton.astro';
 import { site } from '../../../config';
 import { getCollection } from 'astro:content';
 
@@ -14,6 +15,7 @@ const whatsapp = site.whatsapp;
       <h1>Your Chongqing travel kit.</h1>
       <p style="font-size:1.15rem;">Save the essentials before your flight. Read them when you're offline.</p>
       <p class="muted small" id="net-state" aria-live="polite">Checking connection…</p>
+      <p style="margin-top:0.9rem;"><ShareButton title="CQ Buddy — Chongqing travel kit" text="Verified offline guides, phrase cards and a real local's contact for Chongqing. Save before your flight." label="Share this kit" /></p>
 
       <!-- 资料包卡 -->
       <div class="card" style="margin-top:1.5rem;" id="pack-card">

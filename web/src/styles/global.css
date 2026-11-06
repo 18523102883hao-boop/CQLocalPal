@@ -165,6 +165,16 @@ footer.site .brand-hours { margin: 0; color: color-mix(in srgb, var(--paper) 75%
 }
 .update-banner a { color: var(--paper); text-decoration: underline; font-weight: 600; white-space: nowrap; }
 
+/* Share button (Web Share API + clipboard fallback) */
+.share-btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.5rem 0.95rem; border: 1px solid var(--ink); border-radius: var(--radius);
+  background: transparent; color: var(--ink); font: inherit; font-size: 0.92rem;
+  cursor: pointer; transition: background 0.15s, color 0.15s;
+}
+.share-btn:hover { background: var(--ink); color: var(--paper); }
+.share-btn svg { width: 16px; height: 16px; }
+
 /* Guide prose */
 .prose h2 { margin-top: 2.2rem; }
 .prose h3 { margin-top: 1.6rem; }

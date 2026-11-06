@@ -1,8 +1,8 @@
 {
   "id": "/en/travel-kit/",
-  "name": "CQLocalPal — Chongqing travel kit",
-  "short_name": "CQ Travel Kit",
-  "description": "Verified offline guides, phrase cards and public contacts for your Chongqing trip. Save before your flight, read without internet.",
+  "name": "CQ Buddy — Chongqing travel kit",
+  "short_name": "CQ Buddy",
+  "description": "Verified offline guides, phrase cards and a real local's contact for your Chongqing trip. Save before your flight, read without internet.",
   "start_url": "/en/travel-kit/",
   "scope": "/en/",
   "display": "standalone",
@@ -14,5 +14,10 @@
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" },
     { "src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
     { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "Travel kit", "short_name": "Kit", "url": "/en/travel-kit/", "description": "Your saved offline guides and phrase cards" },
+    { "name": "Guides", "short_name": "Guides", "url": "/en/guide/", "description": "All free verified guides" },
+    { "name": "Contact a local", "short_name": "Contact", "url": "/en/contact/", "description": "Message us on WhatsApp" }
   ]
 }
