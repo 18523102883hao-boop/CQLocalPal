@@ -21,8 +21,9 @@ self.addEventListener('install', (event) => {
     caches.open(SHELL_CACHE)
       // 单个 shell 资源失败不阻断安装（离线说明页本身尽力而为）
       .then((c) => Promise.allSettled(SHELL.map((u) => c.add(u))))
+      // 内容型站点策略：静默自动更新，不弹"更新提示条"打断用户
+      .then(() => self.skipWaiting())
   );
-  // 不调用 skipWaiting：新版本进入 waiting，由 Travel kit 页询问用户后再激活
 });
 
 self.addEventListener('activate', (event) => {
@@ -35,10 +36,6 @@ self.addEventListener('activate', (event) => {
       ))
       .then(() => self.clients.claim())
   );
-});
-
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') self.skipWaiting();
 });
 
 function isPrivatePath(url) {

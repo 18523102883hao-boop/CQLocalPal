@@ -155,16 +155,6 @@ footer.site .brand-hours { margin: 0; color: color-mix(in srgb, var(--paper) 75%
 .kit-note { background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius); padding: 1rem 1.25rem; }
 
 /* Update banner (SW waiting) */
-.update-banner {
-  position: fixed; left: 50%; transform: translateX(-50%);
-  bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px)); z-index: 80;
-  background: var(--ink); color: var(--paper); padding: 0.65rem 1rem; border-radius: var(--radius);
-  display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; align-items: center;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-  max-width: min(92vw, 26rem); font-size: 0.95rem; line-height: 1.35;
-}
-.update-banner a { color: var(--paper); text-decoration: underline; font-weight: 600; white-space: nowrap; }
-
 /* Share button (Web Share API + clipboard fallback) */
 .share-btn {
   display: inline-flex; align-items: center; gap: 0.45rem;

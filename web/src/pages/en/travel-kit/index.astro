@@ -91,12 +91,6 @@ const whatsapp = site.whatsapp;
     </div>
   </section>
 
-  <div class="update-banner" id="update-banner" hidden>
-    <span>An update is ready.</span>
-    <a href="#" id="btn-reload">Reload</a>
-    <a href="#" id="btn-later">Later</a>
-  </div>
-
   <script is:inline define:vars={{ whatsapp }}>
     (() => {
       const LS_KEY = 'cqpal-kit-meta';
@@ -106,7 +100,6 @@ const whatsapp = site.whatsapp;
         progress: $('kit-progress'), bar: document.querySelector('#kit-progress > div'),
         save: $('btn-save'), update: $('btn-update'), retry: $('btn-retry'), clear: $('btn-clear'),
         version: $('pack-version'), size: $('pack-size'), reviewed: $('pack-reviewed'),
-        banner: $('update-banner'),
       };
 
       // ---- 网络状态提示 ----
@@ -276,23 +269,10 @@ const whatsapp = site.whatsapp;
       els.retry.addEventListener('click', init);
       els.clear.addEventListener('click', () => { if (confirm('Remove the saved kit from this device?')) doClear(); });
 
-      // ---- Service Worker 注册 + 更新提示（不在付款/表单流程强刷） ----
-      let userClickedReload = false;
+      // ---- Service Worker 注册：静默自动更新，不弹提示条 ----
       async function registerSW() {
         try {
-          const reg = await navigator.serviceWorker.register('/en/sw.js', { scope: '/en/' });
-          const promptUpdate = () => {
-            if (!reg.waiting) return;
-            els.banner.hidden = false;
-            $('btn-reload').onclick = (e) => { e.preventDefault(); userClickedReload = true; reg.waiting.postMessage({ type: 'SKIP_WAITING' }); };
-            $('btn-later').onclick = (e) => { e.preventDefault(); els.banner.hidden = true; };
-          };
-          reg.addEventListener('updatefound', () => {
-            const sw = reg.installing;
-            sw && sw.addEventListener('statechange', () => { if (sw.state === 'installed' && navigator.serviceWorker.controller) promptUpdate(); });
-          });
-          promptUpdate();
-          navigator.serviceWorker.addEventListener('controllerchange', () => { if (userClickedReload) location.reload(); });
+          await navigator.serviceWorker.register('/en/sw.js', { scope: '/en/' });
         } catch { /* 无SW环境：普通网页继续 */ }
       }
 
